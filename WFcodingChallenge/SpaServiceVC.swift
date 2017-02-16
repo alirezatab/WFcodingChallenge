@@ -59,7 +59,7 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
             reserveButton.backgroundColor = .blue
             reserveButton.setTitle("RESERVATION", for: .normal)
             
-            reserveButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            reserveButton.addTarget(self, action: #selector(onReservationButtonPressed), for: .touchUpInside)
             
             reserveButton.layer.cornerRadius = 5
             reserveButton.layer.masksToBounds = true
@@ -104,7 +104,7 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
                                         animated: true)
     }
     
-    func buttonAction(sender: UIButton!) {
+    func onReservationButtonPressed(sender: UIButton!) {
         print("button pressed")
     }
 
