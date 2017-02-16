@@ -13,10 +13,11 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var reserveButton: UIButton!
     
-    var scrollWidth : CGFloat = UIScreen.main.bounds.size.width
-    var scrollHeight : CGFloat = UIScreen.main.bounds.size.height - 64
+    private var reserveButton: UIButton!
+    
+    private var scrollWidth : CGFloat = UIScreen.main.bounds.size.width
+    private var scrollHeight : CGFloat = UIScreen.main.bounds.size.height - 64
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,8 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
         containerView.layer.cornerRadius = 15
         containerView.layer.masksToBounds = true
         
-        reserveButton.layer.cornerRadius = 5
-        reserveButton.layer.masksToBounds = true
+        //reserveButton.layer.cornerRadius = 5
+        //reserveButton.layer.masksToBounds = true
         
         // setup the size o the scrollView - 3 is cause we have 3 pages
         scrollView?.contentSize = CGSize(width: (scrollWidth * 3), height: scrollHeight)
@@ -37,6 +38,8 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
         scrollView?.isPagingEnabled = true
         
         setupOfferPages()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,16 +54,34 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
             let imageView = UIImageView.init()
             imageView.frame = CGRect(x: scrollWidth * CGFloat (i), y: 0, width: scrollWidth,height: scrollHeight)
             
+            let frame = CGRect(x: scrollWidth * CGFloat (i) + 25, y: 250, width: 175, height: 44)
+            reserveButton = UIButton(frame: frame)
+            reserveButton.backgroundColor = .blue
+            reserveButton.setTitle("RESERVATION", for: .normal)
+            
+            reserveButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            
+            reserveButton.layer.cornerRadius = 5
+            reserveButton.layer.masksToBounds = true
+            
+            
+            
             switch i {
             case 1:
                 imageView.image = UIImage(named: "HotStoneOffer")
+                reserveButton.isEnabled = true
             case 2:
                 imageView.image = UIImage(named: "DeepTissueOffer")
+                reserveButton.isEnabled = false
+
             default:
                 imageView.image = UIImage(named: "MothersDayOffer")
+                reserveButton.isEnabled = false
+
             }
             
             scrollView?.addSubview(imageView)
+            scrollView?.addSubview(reserveButton)
         }
     }
     
@@ -81,6 +102,10 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
                                                 width: scrollWidth,
                                                 height: scrollHeight),
                                         animated: true)
+    }
+    
+    func buttonAction(sender: UIButton!) {
+        print("button pressed")
     }
 
 }

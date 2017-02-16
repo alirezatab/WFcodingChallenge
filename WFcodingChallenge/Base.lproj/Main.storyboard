@@ -69,21 +69,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gR5-D1-u32">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6Z-mP-sFQ">
-                                <rect key="frame" x="41" y="316" width="175" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="USF-vs-hr4"/>
-                                    <constraint firstAttribute="width" constant="175" id="j7q-hJ-6kY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17.5"/>
-                                <state key="normal" title="RESERVE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="8bH-cl-sId" kind="show" id="nYu-ZQ-3Fx"/>
-                                </connections>
-                            </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cyy-Xu-k4g">
                                 <rect key="frame" x="163" y="368" width="50" height="34"/>
                                 <constraints>
@@ -113,11 +98,8 @@
                             <constraint firstItem="gR5-D1-u32" firstAttribute="leading" secondItem="URE-2n-oMe" secondAttribute="leading" id="F3i-gD-SfZ"/>
                             <constraint firstItem="FmP-NC-kL8" firstAttribute="top" secondItem="gR5-D1-u32" secondAttribute="bottom" id="MrV-Wj-MdK"/>
                             <constraint firstItem="Cyy-Xu-k4g" firstAttribute="centerX" secondItem="URE-2n-oMe" secondAttribute="centerX" id="SLT-tJ-Cuu"/>
-                            <constraint firstItem="Cyy-Xu-k4g" firstAttribute="top" secondItem="L6Z-mP-sFQ" secondAttribute="bottom" constant="8" id="cbj-vy-TN9"/>
                             <constraint firstAttribute="trailing" secondItem="Wok-cB-1x4" secondAttribute="trailing" constant="15" id="kUo-np-upC"/>
-                            <constraint firstItem="Cyy-Xu-k4g" firstAttribute="top" secondItem="L6Z-mP-sFQ" secondAttribute="bottom" constant="8" id="nyn-i4-25q"/>
                             <constraint firstItem="Wok-cB-1x4" firstAttribute="top" secondItem="Cyy-Xu-k4g" secondAttribute="bottom" constant="-5" id="phM-MR-qFz"/>
-                            <constraint firstItem="L6Z-mP-sFQ" firstAttribute="leading" secondItem="URE-2n-oMe" secondAttribute="leadingMargin" constant="25" id="rQN-dN-74k"/>
                             <constraint firstItem="FmP-NC-kL8" firstAttribute="top" secondItem="Wok-cB-1x4" secondAttribute="bottom" constant="20" id="sdM-eJ-8ry"/>
                             <constraint firstItem="gR5-D1-u32" firstAttribute="top" secondItem="jHM-5c-WTU" secondAttribute="bottom" id="wTx-4L-yIK"/>
                         </constraints>
@@ -126,7 +108,6 @@
                     <connections>
                         <outlet property="containerView" destination="Wok-cB-1x4" id="C2E-ic-qVA"/>
                         <outlet property="pageControl" destination="Cyy-Xu-k4g" id="rVZ-Fe-Z9k"/>
-                        <outlet property="reserveButton" destination="L6Z-mP-sFQ" id="URB-kZ-Drs"/>
                         <outlet property="scrollView" destination="gR5-D1-u32" id="HQG-bc-5Fc"/>
                     </connections>
                 </viewController>
@@ -139,7 +120,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2BW-fs-C7m" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mP4-KT-wS0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mP4-KT-wS0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.46736198663711548" green="0.74216973781585693" blue="0.92962968349456787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -305,7 +286,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QGU-O2-dl3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MDn-wj-3B0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -315,7 +296,4 @@
             <point key="canvasLocation" x="2766" y="139"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="nYu-ZQ-3Fx"/>
-    </inferredMetricsTieBreakers>
 </document>
