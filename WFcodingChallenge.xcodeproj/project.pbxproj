@@ -300,6 +300,7 @@
 				C2CCE58A1E55A0F20045BBC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
