@@ -36,7 +36,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Item" id="UoN-bb-4yI">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="2BW-fs-C7m" kind="show" id="uYQ-d2-KRM"/>
+                                                <segue destination="2BW-fs-C7m" kind="show" animates="NO" id="uYQ-d2-KRM"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -57,7 +57,7 @@
         <!--SPA SERVICE-->
         <scene sceneID="w9C-fP-W70">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vcz-4X-VVg" customClass="SpaServiceVC" customModule="WellsfargoChallenege" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vcz-4X-VVg" customClass="SpaServiceVC" customModule="WFcodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jHM-5c-WTU"/>
                         <viewControllerLayoutGuide type="bottom" id="FmP-NC-kL8"/>
@@ -139,9 +139,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2BW-fs-C7m" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mP4-KT-wS0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mP4-KT-wS0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.46736198663711548" green="0.74216973781585693" blue="0.92962968349456787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -155,7 +159,7 @@
         <!--Massage OptionsVC-->
         <scene sceneID="OrE-Co-4VA">
             <objects>
-                <tableViewController id="HS6-RZ-w6V" customClass="MassageOptionsVC" customModule="WellsfargoChallenege" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HS6-RZ-w6V" customClass="MassageOptionsVC" customModule="WFcodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="483-hK-yYu">
                         <rect key="frame" x="0.0" y="0.0" width="345" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,7 +175,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swedish Massage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkp-Wq-j8T">
-                                                    <rect key="frame" x="14" y="14" width="314" height="21"/>
+                                                    <rect key="frame" x="14" y="14" width="284" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -193,7 +197,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep Tissue Massage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZeM-mj-kXa">
-                                                    <rect key="frame" x="14" y="14" width="314" height="21"/>
+                                                    <rect key="frame" x="14" y="14" width="284" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -215,7 +219,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Stone Massage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEt-6t-2s3">
-                                                    <rect key="frame" x="14" y="14" width="314" height="21"/>
+                                                    <rect key="frame" x="14" y="14" width="284" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -240,7 +244,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reflexology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-0J-Qdx">
-                                                    <rect key="frame" x="14" y="14" width="314" height="21"/>
+                                                    <rect key="frame" x="14" y="14" width="284" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -262,7 +266,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger Point Therapy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvP-pb-gxs">
-                                                    <rect key="frame" x="14" y="14" width="314" height="21"/>
+                                                    <rect key="frame" x="14" y="14" width="284" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
