@@ -12,6 +12,7 @@
 		C2CCE5811E55A0F20045BBC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */; };
 		C2CCE5841E55A0F20045BBC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE5821E55A0F20045BBC1 /* LaunchScreen.storyboard */; };
 		C2CCE58C1E55A49B0045BBC1 /* SpaServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */; };
+		C2CCE58E1E55DE820045BBC1 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C2CCE5831E55A0F20045BBC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2CCE5851E55A0F20045BBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaServiceVC.swift; sourceTree = "<group>"; };
+		C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		C2CCE5781E55A0F20045BBC1 /* WFcodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				C2CCE58F1E55DE880045BBC1 /* ViewControllers */,
 				C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */,
-				C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */,
 				C2CCE57D1E55A0F20045BBC1 /* Main.storyboard */,
 				C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */,
 				C2CCE5821E55A0F20045BBC1 /* LaunchScreen.storyboard */,
 				C2CCE5851E55A0F20045BBC1 /* Info.plist */,
 			);
 			path = WFcodingChallenge;
+			sourceTree = "<group>";
+		};
+		C2CCE58F1E55DE880045BBC1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */,
+				C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				C2CCE57A1E55A0F20045BBC1 /* AppDelegate.swift in Sources */,
 				C2CCE58C1E55A49B0045BBC1 /* SpaServiceVC.swift in Sources */,
+				C2CCE58E1E55DE820045BBC1 /* ScheduleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

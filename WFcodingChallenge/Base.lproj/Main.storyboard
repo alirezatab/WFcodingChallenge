@@ -109,6 +109,7 @@
                         <outlet property="containerView" destination="Wok-cB-1x4" id="C2E-ic-qVA"/>
                         <outlet property="pageControl" destination="Cyy-Xu-k4g" id="rVZ-Fe-Z9k"/>
                         <outlet property="scrollView" destination="gR5-D1-u32" id="HQG-bc-5Fc"/>
+                        <segue destination="8bH-cl-sId" kind="show" identifier="ReservationButtonPressed" id="1Nl-oa-Xvn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6Q-Ii-qk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,7 +121,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2BW-fs-C7m" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mP4-KT-wS0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mP4-KT-wS0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.46736198663711548" green="0.74216973781585693" blue="0.92962968349456787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -277,23 +278,80 @@
             </objects>
             <point key="canvasLocation" x="1678" y="676"/>
         </scene>
-        <!--View Controller-->
+        <!--SCHEDULE-->
         <scene sceneID="TXd-PJ-hlD">
             <objects>
-                <viewController id="8bH-cl-sId" sceneMemberID="viewController">
+                <viewController id="8bH-cl-sId" customClass="ScheduleVC" customModule="WFcodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sFN-W9-vWP"/>
                         <viewControllerLayoutGuide type="bottom" id="QGU-O2-dl3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MDn-wj-3B0">
-                        <rect key="frame" x="0.0" y="0.0" width="345" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-VH-uH8">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tH7-fH-qNi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="32"/>
+                                <state key="normal" title="Reserve"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBW-WR-73G">
+                                <rect key="frame" x="0.0" y="429" width="375" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBN-Bu-8Qs">
+                                <rect key="frame" x="0.0" y="320" width="375" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mkB-Mg-gWL">
+                                <rect key="frame" x="16" y="89" width="343" height="212"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HotStoneOffer" translatesAutoresizingMaskIntoConstraints="NO" id="4Qe-g8-mtA">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="212"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hot Stone Massage" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-rt-Smi">
+                                        <rect key="frame" x="138" y="8" width="152" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Massage focused on the deepest layer of muscles to target knots and release chronix muscle tension." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tym-Jw-9Pf">
+                                        <rect key="frame" x="138" y="107" width="197" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QGU-O2-dl3" firstAttribute="top" secondItem="t4d-VH-uH8" secondAttribute="bottom" id="ONQ-Va-b7G"/>
+                            <constraint firstItem="t4d-VH-uH8" firstAttribute="leading" secondItem="MDn-wj-3B0" secondAttribute="leading" id="lMQ-lN-tV7"/>
+                            <constraint firstAttribute="trailing" secondItem="t4d-VH-uH8" secondAttribute="trailing" id="oKq-kP-a9D"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="SCHEDULE" id="NhQ-ES-VRw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOP-M3-5IB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2766" y="139"/>
+            <point key="canvasLocation" x="2904.8000000000002" y="117.39130434782609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HotStoneOffer" width="249" height="400"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Nl-oa-Xvn"/>
+    </inferredMetricsTieBreakers>
 </document>
