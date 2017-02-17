@@ -6,8 +6,6 @@
 //  Copyright © 2017 AR-T.com, Inc. All rights reserved.
 //
 
-///cellIdentifier DateCollectionViewCell
-
 import UIKit
 
 class DateCollectionViewCell: UICollectionViewCell {
