@@ -14,7 +14,8 @@ class TimeModel: NSObject {
     private let components = NSDateComponents()
     private let dateFormatter = DateFormatter()
     private var reservationTimes : [Date] = []
-    private let closingHour = "9:00 PM"
+    private let closingHour = "09:00 PM"
+    private var openingHour = "9:00 AM"
 
     func getReservationTimeIntervals() -> [Date] {
         
@@ -29,11 +30,14 @@ class TimeModel: NSObject {
         // create hour time interval
         var time = calendar.date(from: components as DateComponents)!
         
-        let timeString = dateFormatter.string(from: time)
         // put the hour into an array and inceremnt it by 1 HR
-        while timeString != closingHour {
+        while openingHour != closingHour {
+            //print(openingHour)
+            //print(closingHour)
             reservationTimes.append(time)
             time = calendar.date(byAdding: .hour, value: 1, to: time)!
+            openingHour = dateFormatter.string(from: time)
+            //print(openingHour)
         }
         
         return reservationTimes
