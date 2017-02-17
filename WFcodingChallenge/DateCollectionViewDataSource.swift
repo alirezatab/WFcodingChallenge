@@ -29,7 +29,7 @@ class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         // downcasting to string to be inserted in text
         cell.weekdayLabel.text = dateFormatter.string(from: dates[indexPath.row])
         cell.dayOfMonthNumberLabel.text = String(indexPath.row + 1)
-        
+        cell.checkMarkImageView.alpha = 0
         return cell
     }
 }

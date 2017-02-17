@@ -12,6 +12,5 @@ class DateCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var weekdayLabel: UILabel!
     @IBOutlet weak var dayOfMonthNumberLabel: UILabel!
-    
-    
+    @IBOutlet weak var checkMarkImageView: UIImageView!
 }

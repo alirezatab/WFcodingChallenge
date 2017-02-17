@@ -62,11 +62,4 @@ class DateModel: NSObject {
         
         return dates
     }
-    
-    // based on current Date, just extract the Month
-    func getMonth() -> String {
-        dateFormatter.dateFormat = "MMMM"
-        
-        return dateFormatter.string(from: currentDate as Date)
-    }
 }
