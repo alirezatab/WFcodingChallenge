@@ -20,6 +20,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         
         timeCollectionView.dataSource = dataSource
         timeCollectionView.delegate = self
+        timeCollectionView.collectionViewLayout = TimeCustomFlowLayout()
     }
     
     // user taps cell & check Mark appreas or disappears
