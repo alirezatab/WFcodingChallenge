@@ -26,6 +26,8 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         
         dateCollectionView.dataSource = dataSource
         dateCollectionView.delegate = self
+        dateCollectionView.collectionViewLayout = DateCustomFlowLayout()
+
         
         monthLabel.text = getMonth()
     }

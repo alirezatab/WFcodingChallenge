@@ -11,9 +11,8 @@ import UIKit
 class TimeCustomFlowLayout: UICollectionViewFlowLayout {
 
     private let itemsPerRow: CGFloat = 3.5
-    private let itemsPerColumn: CGFloat = 3
+    private let itemsPerColumn: CGFloat = 3.5
 
-    
     override init() {
         super.init()
         setup()
@@ -35,7 +34,7 @@ class TimeCustomFlowLayout: UICollectionViewFlowLayout {
             
         } get {
             let width = ((self.collectionView?.frame.width)! - (itemsPerRow - 1)) / itemsPerRow
-            let height = ((self.collectionView?.frame.height)! - (itemsPerColumn - 1)) / itemsPerRow
+            let height = ((self.collectionView?.frame.height)! - (itemsPerColumn - 1)) / itemsPerColumn
 
             return CGSize(width: width, height: height)
         }

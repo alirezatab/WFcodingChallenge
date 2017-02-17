@@ -514,7 +514,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Calendar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4C-B5-nny">
-                                <rect key="frame" x="247" y="8" width="80" height="16"/>
+                                <rect key="frame" x="247" y="4" width="80" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="x4C-B5-nny" secondAttribute="height" multiplier="27:7" constant="18.285714285714285" id="Ux2-NX-E7k"/>
                                 </constraints>
@@ -523,7 +523,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyF-Yr-Klg">
-                                <rect key="frame" x="16" y="8" width="39" height="15.5"/>
+                                <rect key="frame" x="16" y="4" width="39" height="15.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oyF-Yr-Klg" secondAttribute="height" multiplier="5:2" id="v12-VO-Mbv"/>
                                 </constraints>
@@ -606,13 +606,13 @@
                             </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="x4C-B5-nny" firstAttribute="top" secondItem="p5E-DL-dBr" secondAttribute="topMargin" constant="8" id="5m8-0L-pYj"/>
+                            <constraint firstItem="x4C-B5-nny" firstAttribute="top" secondItem="p5E-DL-dBr" secondAttribute="topMargin" constant="4" id="5m8-0L-pYj"/>
                             <constraint firstItem="nCM-uJ-d5i" firstAttribute="leading" secondItem="p5E-DL-dBr" secondAttribute="leadingMargin" id="BCr-xi-unO"/>
                             <constraint firstItem="oyF-Yr-Klg" firstAttribute="leading" secondItem="p5E-DL-dBr" secondAttribute="leadingMargin" id="LdI-NP-WG5"/>
                             <constraint firstItem="x4C-B5-nny" firstAttribute="trailing" secondItem="p5E-DL-dBr" secondAttribute="trailingMargin" id="NH2-kd-jea"/>
                             <constraint firstItem="nCM-uJ-d5i" firstAttribute="trailing" secondItem="p5E-DL-dBr" secondAttribute="trailingMargin" id="Uog-wF-NAh"/>
-                            <constraint firstItem="oyF-Yr-Klg" firstAttribute="top" secondItem="p5E-DL-dBr" secondAttribute="topMargin" constant="8" id="oIR-jr-abi"/>
-                            <constraint firstItem="nCM-uJ-d5i" firstAttribute="top" secondItem="x4C-B5-nny" secondAttribute="bottom" id="wwi-U3-PwJ"/>
+                            <constraint firstItem="oyF-Yr-Klg" firstAttribute="top" secondItem="p5E-DL-dBr" secondAttribute="topMargin" constant="4" id="oIR-jr-abi"/>
+                            <constraint firstItem="nCM-uJ-d5i" firstAttribute="top" secondItem="x4C-B5-nny" secondAttribute="bottom" constant="4" id="wwi-U3-PwJ"/>
                         </constraints>
                     </view>
                     <connections>
