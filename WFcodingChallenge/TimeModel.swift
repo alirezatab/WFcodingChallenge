@@ -13,9 +13,10 @@ class TimeModel: NSObject {
     private let calendar = NSCalendar.current
     private let components = NSDateComponents()
     private let dateFormatter = DateFormatter()
-    private var reservationTimes : [Date] = []
     private let closingHour = "09:00 PM"
     private var openingHour = "9:00 AM"
+    private var reservationTimes : [Date] = []
+
 
     func getReservationTimeIntervals() -> [Date] {
         

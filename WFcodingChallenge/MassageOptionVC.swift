@@ -8,16 +8,27 @@
 
 import UIKit
 
+// set custom delegate
+protocol PickerViewCustomDelegate {
+    func showPickerView()
+}
+
 class MassageOptionVC: UITableViewController {
 
     @IBOutlet weak var partySizeButton: UIButton!
+    
+    var pickerViewCustomDelegate : PickerViewCustomDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configurePartySizeButton()
+        
+        // listener is looking to see a Party Size picker view is selected
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setPartySizeLabel(_:)), name: NSNotification.Name(rawValue: "SetPartSizeLabel"), object: nil)
     }
     
+    //Mark: - Custom Methods
     // configure Button
     func configurePartySizeButton() {
         
@@ -27,8 +38,18 @@ class MassageOptionVC: UITableViewController {
         partySizeButton.layer.masksToBounds = true
     }
 
+    func setPartySizeLabel(_ notification: NSNotification){
+        if let partySize = notification.userInfo?["partySize"] as? String {
+            partySizeButton.titleLabel?.text = partySize
+        }
+    }
+    
+    
+    //Mark: - IBActions
     @IBAction func onPartySizeButtonPressed(_ sender: UIButton) {
-        
+        if pickerViewCustomDelegate != nil {
+            pickerViewCustomDelegate?.showPickerView()
+        }
     }
     
     override func didReceiveMemoryWarning() {

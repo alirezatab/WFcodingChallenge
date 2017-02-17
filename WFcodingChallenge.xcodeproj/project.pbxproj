@@ -18,6 +18,8 @@
 		C255D6A31E573ECC00455B47 /* MassageOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6A21E573ECC00455B47 /* MassageOptionVC.swift */; };
 		C255D6A51E576A0200455B47 /* TimeCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6A41E576A0200455B47 /* TimeCustomFlowLayout.swift */; };
 		C255D6A71E5775CE00455B47 /* DateCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6A61E5775CE00455B47 /* DateCustomFlowLayout.swift */; };
+		C255D6AA1E578CE500455B47 /* PickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6A91E578CE500455B47 /* PickerViewDataSource.swift */; };
+		C255D6AC1E578EB200455B47 /* PickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6AB1E578EB200455B47 /* PickerModel.swift */; };
 		C2CCE57A1E55A0F20045BBC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */; };
 		C2CCE57F1E55A0F20045BBC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE57D1E55A0F20045BBC1 /* Main.storyboard */; };
 		C2CCE5811E55A0F20045BBC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		C255D6A21E573ECC00455B47 /* MassageOptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassageOptionVC.swift; sourceTree = "<group>"; };
 		C255D6A41E576A0200455B47 /* TimeCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCustomFlowLayout.swift; sourceTree = "<group>"; };
 		C255D6A61E5775CE00455B47 /* DateCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCustomFlowLayout.swift; sourceTree = "<group>"; };
+		C255D6A91E578CE500455B47 /* PickerViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSource.swift; sourceTree = "<group>"; };
+		C255D6AB1E578EB200455B47 /* PickerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerModel.swift; sourceTree = "<group>"; };
 		C2CCE5761E55A0F20045BBC1 /* WFcodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WFcodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2CCE57E1E55A0F20045BBC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				C255D69A1E56BFA000455B47 /* DateCollectionViewDataSource.swift */,
 				C255D69C1E56CE9100455B47 /* TimeModel.swift */,
 				C255D69E1E56CEA500455B47 /* TimeCollectionViewDataSource.swift */,
+				C255D6AB1E578EB200455B47 /* PickerModel.swift */,
+				C255D6A91E578CE500455B47 /* PickerViewDataSource.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -209,12 +215,14 @@
 				C255D69F1E56CEA500455B47 /* TimeCollectionViewDataSource.swift in Sources */,
 				C255D6A51E576A0200455B47 /* TimeCustomFlowLayout.swift in Sources */,
 				C255D69D1E56CE9100455B47 /* TimeModel.swift in Sources */,
+				C255D6AA1E578CE500455B47 /* PickerViewDataSource.swift in Sources */,
 				C255D6991E56BB6B00455B47 /* DateModel.swift in Sources */,
 				C255D6A71E5775CE00455B47 /* DateCustomFlowLayout.swift in Sources */,
 				C255D69B1E56BFA000455B47 /* DateCollectionViewDataSource.swift in Sources */,
 				C255D6931E568C3300455B47 /* DateCollectionVC.swift in Sources */,
 				C255D6951E568C4800455B47 /* TimeCollectionVC.swift in Sources */,
 				C255D6871E5674DD00455B47 /* DateCollectionViewCell.swift in Sources */,
+				C255D6AC1E578EB200455B47 /* PickerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
