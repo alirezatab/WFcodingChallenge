@@ -31,6 +31,7 @@ class TimeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         let times = dataSource.getReservationTimeIntervals()
         
         cell.timeLabel.text = dateFormatter.string(from: times[indexPath.row])
+        cell.checkMarkImageView.alpha = 0
         
         return cell
     }

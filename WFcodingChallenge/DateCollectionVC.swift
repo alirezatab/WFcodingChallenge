@@ -45,6 +45,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
             isSelected = true
         } else {
             selectedCell.checkMarkImageView.alpha = 0
+            isSelected = false
         }
     }
     
