@@ -13,4 +13,19 @@ class TimeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    func setup() {
+        self.layer.borderWidth = 0.75
+        self.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
 }

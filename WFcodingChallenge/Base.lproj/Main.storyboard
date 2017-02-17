@@ -522,6 +522,15 @@
                                 <color key="textColor" red="0.0059258625842630863" green="0.40333545207977295" blue="0.7438846230506897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyF-Yr-Klg">
+                                <rect key="frame" x="16" y="8" width="39" height="15.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oyF-Yr-Klg" secondAttribute="height" multiplier="5:2" id="v12-VO-Mbv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nCM-uJ-d5i">
                                 <rect key="frame" x="16" y="24" width="311" height="76"/>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -595,15 +604,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyF-Yr-Klg">
-                                <rect key="frame" x="16" y="8" width="39" height="15.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oyF-Yr-Klg" secondAttribute="height" multiplier="5:2" id="v12-VO-Mbv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="x4C-B5-nny" firstAttribute="top" secondItem="p5E-DL-dBr" secondAttribute="topMargin" constant="8" id="5m8-0L-pYj"/>

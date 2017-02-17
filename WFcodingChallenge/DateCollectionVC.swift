@@ -23,6 +23,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         dateCollectionView.dataSource = dataSource
         dateCollectionView.delegate = self
         
@@ -55,7 +56,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         
         selectedCell.checkMarkImageView.alpha = 0
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
