@@ -476,10 +476,14 @@
             </objects>
             <point key="canvasLocation" x="3671" y="-123"/>
         </scene>
-        <!--View Controller-->
+        <!--Date CollectionVC-->
         <scene sceneID="xPc-sP-cnU">
             <objects>
-                <viewController id="erb-4O-5IW" sceneMemberID="viewController">
+                <viewController id="erb-4O-5IW" customClass="DateCollectionVC" customModule="WFcodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aPi-cU-SlP"/>
+                        <viewControllerLayoutGuide type="bottom" id="wJH-fx-Mxq"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p5E-DL-dBr">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="139"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -504,21 +508,22 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nCM-uJ-d5i">
                                 <rect key="frame" x="16" y="24" width="311" height="95"/>
+                                <color key="backgroundColor" red="0.96460121870040894" green="0.96476620435714722" blue="0.96459084749221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nCM-uJ-d5i" secondAttribute="height" multiplier="311:87" constant="-28.597701149425291" id="l9m-yq-NNn"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L0C-cS-nOJ">
-                                    <size key="itemSize" width="58" height="76"/>
+                                    <size key="itemSize" width="58" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateCollectionViewCell" id="yOV-q5-caf" customClass="DateCollectionViewCell" customModule="WFcodingChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="10" width="58" height="76"/>
+                                        <rect key="frame" x="0.0" y="8" width="58" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="58" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="58" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0c-u3-6jU">
@@ -526,14 +531,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.00630257139" green="0.41870045659999999" blue="0.77171105149999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMs-bm-PdX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMs-bm-PdX">
                                                     <rect key="frame" x="14" y="21" width="30" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aE-GM-9ui">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="num" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aE-GM-9ui">
                                                     <rect key="frame" x="12" y="47" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -551,7 +556,6 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="x4C-B5-nny" firstAttribute="top" secondItem="p5E-DL-dBr" secondAttribute="topMargin" constant="8" id="5m8-0L-pYj"/>
                             <constraint firstItem="nCM-uJ-d5i" firstAttribute="leading" secondItem="p5E-DL-dBr" secondAttribute="leadingMargin" id="BCr-xi-unO"/>
@@ -562,15 +566,23 @@
                             <constraint firstItem="nCM-uJ-d5i" firstAttribute="top" secondItem="x4C-B5-nny" secondAttribute="bottom" id="wwi-U3-PwJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateCollectionView" destination="nCM-uJ-d5i" id="edx-CD-Oge"/>
+                        <outlet property="monthLabel" destination="oyF-Yr-Klg" id="fGm-g6-moB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUR-ES-fyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="139"/>
+            <point key="canvasLocation" x="3784.8000000000002" y="118.29085457271366"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4JA-me-7Zv">
             <objects>
                 <viewController id="tX4-zD-pVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oG0-7B-YWi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fxt-fy-tea"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Owd-bS-NIZ">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="161"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
