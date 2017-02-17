@@ -8,28 +8,59 @@
 
 import UIKit
 
-class TimeCollectionVC: UIViewController {
+private let reuseIdentifier = "TimeCollectionViewCell"
 
+class TimeCollectionVC: UIViewController, UICollectionViewDataSource {
+
+    @IBOutlet weak var timeCollectionView: UICollectionView!
+    var reservationTimes : [Date] = []
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        timeCollectionView.dataSource = self
+       
+        let calendar = NSCalendar.current
+        let components = NSDateComponents()
+        let dateFormatter = DateFormatter()
+        components.hour = 9
+        var newTime = calendar.date(from: components as DateComponents)!
+        
+        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        
+        for _ in 0..<12 {
+            print(dateFormatter.string(from: newTime))
+            reservationTimes.append(newTime)
+            newTime = calendar.date(byAdding: .hour, value: 1, to: newTime)!
+        }
+        
+        print(reservationTimes.count)
+        
+        for i in 0..<12 {
+            print(dateFormatter.string(from: reservationTimes[i]))
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = timeCollectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TimeCollectionViewCell
+        
+        cell.timeLabel.text = "Fuck Off Boyo"
+        
+        return cell
+    }
+    
 }
