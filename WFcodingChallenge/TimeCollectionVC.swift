@@ -12,36 +12,11 @@ private let reuseIdentifier = "TimeCollectionViewCell"
 
 class TimeCollectionVC: UIViewController, UICollectionViewDataSource {
 
-    @IBOutlet weak var timeCollectionView: UICollectionView!
-    var reservationTimes : [Date] = []
-
-    
+    @IBOutlet weak var timeCollectionView: UICollectionView!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timeCollectionView.dataSource = self
-       
-        let calendar = NSCalendar.current
-        let components = NSDateComponents()
-        let dateFormatter = DateFormatter()
-        components.hour = 9
-        var newTime = calendar.date(from: components as DateComponents)!
-        
-        dateFormatter.dateFormat = "hh:mm a"
-        dateFormatter.amSymbol = "AM"
-        dateFormatter.pmSymbol = "PM"
-        
-        for _ in 0..<12 {
-            print(dateFormatter.string(from: newTime))
-            reservationTimes.append(newTime)
-            newTime = calendar.date(byAdding: .hour, value: 1, to: newTime)!
-        }
-        
-        print(reservationTimes.count)
-        
-        for i in 0..<12 {
-            print(dateFormatter.string(from: reservationTimes[i]))
-        }
         
         
     }
