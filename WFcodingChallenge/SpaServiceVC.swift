@@ -39,7 +39,11 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
         
         setupOfferPages()
         
+        // only leaves the arrow of the back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         
+        // change the color of back button to white
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     //MARK: - Scroll View Delegate
@@ -58,12 +62,12 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
     func setupOfferPages() {
         for i in 0...2 {
             
-            // insert a imageview inside the scrollerView
+            // create & insert imageview inside scrollerView
             let imageView = UIImageView.init()
             imageView.frame = CGRect(x: scrollWidth * CGFloat (i), y: 0, width: scrollWidth,height: scrollHeight)
             
-            // create & insert buttons inside the  scrollerView
-            let frame = CGRect(x: scrollWidth * CGFloat (i) + 25, y: 250, width: 175, height: 44)
+            // create & insert button inside scrollerView
+            let frame = CGRect(x: scrollWidth * CGFloat (i) + 25, y: (view.bounds.height/3.35), width: 175, height: 44)
             reserveButton = UIButton(frame: frame)
             reserveButton.backgroundColor = .blue
             reserveButton.setTitle("RESERVATION", for: .normal)

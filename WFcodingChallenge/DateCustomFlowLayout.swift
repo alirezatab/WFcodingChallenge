@@ -9,7 +9,7 @@
 import UIKit
 
 class DateCustomFlowLayout: UICollectionViewFlowLayout {
-    private let itemsPerRow: CGFloat = 5.5
+    private let itemsPerRow: CGFloat = 5
     private let itemsPerColumn: CGFloat = 1
     
     
