@@ -8,13 +8,19 @@
 
 import UIKit
 
+// set custom delegate for time selection
+protocol TimeSelectionDelegate {
+    func isTimeSelected(_ isSelected: Bool)
+}
+
 class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
 
-    
     @IBOutlet weak var timeCollectionView: UICollectionView!
     private let dataSource = TimeCollectionViewDataSource()
     private var isSelected = false
-
+    
+    var timeSelectionDelegate : TimeSelectionDelegate? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +41,10 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
         }
+        
+        if timeSelectionDelegate != nil {
+            timeSelectionDelegate?.isTimeSelected(isSelected)
+        }
     }
     
     // user taps a different cell and check mark disappears
@@ -42,6 +52,11 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! TimeCollectionViewCell
         
         selectedCell.checkMarkImageView.alpha = 0
+        isSelected = false
+        
+        if timeSelectionDelegate != nil {
+            timeSelectionDelegate?.isTimeSelected(isSelected)
+        }
     }
 
     override func didReceiveMemoryWarning() {

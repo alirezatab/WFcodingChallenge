@@ -8,6 +8,10 @@
 
 import UIKit
 
+// set custom delegate for date selection
+protocol DateSelectionDelegate {
+    func isDateSelected(_ isSelected: Bool)
+}
 
 class DateCollectionVC: UIViewController, UICollectionViewDelegate {
 
@@ -19,6 +23,8 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     private var daysInMonth = Int()
     private let dataSource = DateCollectionViewDataSource()
     private var isSelected = false
+    
+    var dateSelectionDelegate : DateSelectionDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +52,14 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         if !isSelected {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
+
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
+        }
+        
+        if dateSelectionDelegate != nil {
+            dateSelectionDelegate?.isDateSelected(isSelected)
         }
     }
     
@@ -57,6 +68,11 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
         
         selectedCell.checkMarkImageView.alpha = 0
+        isSelected = false
+        
+        if dateSelectionDelegate != nil {
+            dateSelectionDelegate?.isDateSelected(isSelected)
+        }
     }
     
     override func didReceiveMemoryWarning() {

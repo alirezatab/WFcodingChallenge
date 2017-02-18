@@ -19,8 +19,13 @@ class ScheduleVC: UIViewController {
     //MARK: - Global Private constants
     fileprivate var partySizeString = String()
     fileprivate let pickerData = PickerModel().getPickerData()
+    fileprivate var isDateSelected = Bool()
+    fileprivate var isTimeSelected = Bool()
     private let pickerDataSoure = PickerViewDataSource()
-    private let segueIdentifierMassageOptionVC = "MassageOptionVC"
+    private let massageOptionVCidentifier = "MassageOptionVC"
+    private let dateCollectionVCidentifier = "DateCollectionVC"
+    private let timeCollectionVCidentifier = "TimeCollectionVC"
+
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -44,18 +49,32 @@ class ScheduleVC: UIViewController {
         pickerView.delegate = self
     }
     
+    func shouldEnableReservationButton() {
+        print(isTimeSelected)
+        print(isDateSelected)
+        
+        
+        if isTimeSelected && isDateSelected {
+            reservationButton.isEnabled = true
+            reservationButton.backgroundColor = UIColor(colorLiteralRed: 2/255.0, green: 107/255.0, blue: 197/255.0, alpha: 1.0)
+        }
+    }
+    
     // MARK: - IBActions
     @IBAction func onDoneButtonPressed(_ sender: UIBarButtonItem) {
         pickerHelperView.isHidden = true
         
         let partSizeDict : [String: String] = ["partySize": partySizeString]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SetPartSizeLabel"), object: self, userInfo: partSizeDict)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SetPartySizeLabel"), object: self, userInfo: partSizeDict)
     }
     
     @IBAction func onCancelButtonPressed(_ sender: UIBarButtonItem) {
         pickerHelperView.isHidden = true
     }
     
+    @IBAction func isReservatioButtonPressed(_ sender: UIButton) {
+        // pop nav bar and send data
+    }
     
     // MARK: - Memory Warning
     override func didReceiveMemoryWarning() {
@@ -65,9 +84,20 @@ class ScheduleVC: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdentifierMassageOptionVC {
+        if segue.identifier == massageOptionVCidentifier
+        {
             let massageOptionVC = segue.destination as! MassageOptionVC
             massageOptionVC.pickerViewCustomDelegate = self
+        }
+        else if segue.identifier == dateCollectionVCidentifier
+        {
+            let dateCollectionVC = segue.destination as! DateCollectionVC
+            dateCollectionVC.dateSelectionDelegate = self
+        }
+        else if segue.identifier == timeCollectionVCidentifier
+        {
+            let timeCollectionVC = segue.destination as! TimeCollectionVC
+            timeCollectionVC.timeSelectionDelegate = self
         }
     }
 
@@ -91,6 +121,23 @@ extension ScheduleVC : UIPickerViewDelegate {
 // mark: - Picker View Custom Delegate
 extension ScheduleVC : PickerViewCustomDelegate {
     func showPickerView() {
-            pickerHelperView.isHidden = false
+        pickerHelperView.isHidden = false
     }
+}
+
+// mark: - Date Selection Custom Delegate
+extension ScheduleVC : DateSelectionDelegate {
+    func isDateSelected(_ isSelected: Bool) {
+        self.isDateSelected = isSelected
+        shouldEnableReservationButton()
+    }
+}
+
+// mark: - Time Selection Custom Delegate
+extension ScheduleVC : TimeSelectionDelegate {
+    func isTimeSelected(_ isSelected: Bool) {
+        self.isTimeSelected = isSelected
+        shouldEnableReservationButton()
+    }
+    
 }

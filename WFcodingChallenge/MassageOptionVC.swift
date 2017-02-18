@@ -8,7 +8,7 @@
 
 import UIKit
 
-// set custom delegate
+// set custom delegate for pickerView
 protocol PickerViewCustomDelegate {
     func showPickerView()
 }
@@ -25,7 +25,7 @@ class MassageOptionVC: UITableViewController {
         configurePartySizeButton()
         
         // listener is looking to see a Party Size picker view is selected
-        NotificationCenter.default.addObserver(self, selector: #selector(self.setPartySizeLabel(_:)), name: NSNotification.Name(rawValue: "SetPartSizeLabel"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setPartySizeLabel(_:)), name: NSNotification.Name(rawValue: "SetPartySizeLabel"), object: nil)
     }
     
     //Mark: - Custom Methods

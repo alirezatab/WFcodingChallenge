@@ -307,6 +307,9 @@
                                 <state key="normal" title="Reserve">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="isReservatioButtonPressed:" destination="8bH-cl-sId" eventType="touchUpInside" id="cvM-Bb-x4F"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkB-Mg-gWL">
                                 <rect key="frame" x="16" y="72" width="343" height="211"/>
@@ -342,7 +345,7 @@
                                     <constraint firstAttribute="width" secondItem="5yF-au-3PQ" secondAttribute="height" multiplier="343:139" constant="61.690647482014356" id="hd4-hK-DAt"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="erb-4O-5IW" kind="embed" id="XXS-8T-Nqr"/>
+                                    <segue destination="erb-4O-5IW" kind="embed" identifier="DateCollectionVC" id="XXS-8T-Nqr"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ky-tE-D9N">
@@ -351,7 +354,7 @@
                                     <constraint firstAttribute="width" secondItem="1ky-tE-D9N" secondAttribute="height" multiplier="343:141" constant="-109.468085106383" id="bPS-Gh-dBD"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="tX4-zD-pVC" kind="embed" id="blw-TT-PXY"/>
+                                    <segue destination="tX4-zD-pVC" kind="embed" identifier="TimeCollectionVC" id="blw-TT-PXY"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAm-Oe-OSg">
