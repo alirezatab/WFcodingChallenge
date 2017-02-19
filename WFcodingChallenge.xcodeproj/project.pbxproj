@@ -24,6 +24,8 @@
 		C255D6B01E590D6D00455B47 /* MyReservationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6AF1E590D6D00455B47 /* MyReservationDataSource.swift */; };
 		C255D6B21E59102F00455B47 /* MyReservationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B11E59102F00455B47 /* MyReservationViewCell.swift */; };
 		C255D6B41E591B3A00455B47 /* MyReservationCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B31E591B3A00455B47 /* MyReservationCustomFlowLayout.swift */; };
+		C255D6BA1E59659200455B47 /* WFCodingChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */; };
+		C255D6F01E596D6700455B47 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6EF1E596D6700455B47 /* CoreDataStack.swift */; };
 		C2CCE57A1E55A0F20045BBC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */; };
 		C2CCE57F1E55A0F20045BBC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE57D1E55A0F20045BBC1 /* Main.storyboard */; };
 		C2CCE5811E55A0F20045BBC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		C255D6AF1E590D6D00455B47 /* MyReservationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationDataSource.swift; sourceTree = "<group>"; };
 		C255D6B11E59102F00455B47 /* MyReservationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationViewCell.swift; sourceTree = "<group>"; };
 		C255D6B31E591B3A00455B47 /* MyReservationCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationCustomFlowLayout.swift; sourceTree = "<group>"; };
+		C255D6B91E59659200455B47 /* WFCodingChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WFCodingChallenge.xcdatamodel; sourceTree = "<group>"; };
+		C255D6EF1E596D6700455B47 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C2CCE5761E55A0F20045BBC1 /* WFcodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WFcodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2CCE57E1E55A0F20045BBC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +77,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C255D6C21E59674D00455B47 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		C255D6C31E59679C00455B47 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C255D6EF1E596D6700455B47 /* CoreDataStack.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		C2CCE56D1E55A0F20045BBC1 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +111,7 @@
 		C2CCE5781E55A0F20045BBC1 /* WFcodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				C255D6C31E59679C00455B47 /* Service */,
 				C2CCE5931E55E5560045BBC1 /* Model */,
 				C2CCE5921E55E54D0045BBC1 /* View */,
 				C2CCE58F1E55DE880045BBC1 /* ViewControllers */,
@@ -100,6 +120,7 @@
 				C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */,
 				C2CCE5821E55A0F20045BBC1 /* LaunchScreen.storyboard */,
 				C2CCE5851E55A0F20045BBC1 /* Info.plist */,
+				C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */,
 			);
 			path = WFcodingChallenge;
 			sourceTree = "<group>";
@@ -141,6 +162,7 @@
 				C255D6AB1E578EB200455B47 /* PickerModel.swift */,
 				C255D6A91E578CE500455B47 /* PickerViewDataSource.swift */,
 				C255D6AF1E590D6D00455B47 /* MyReservationDataSource.swift */,
+				C255D6C21E59674D00455B47 /* Core Data */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -234,10 +256,12 @@
 				C255D6991E56BB6B00455B47 /* DateModel.swift in Sources */,
 				C255D6A71E5775CE00455B47 /* DateCustomFlowLayout.swift in Sources */,
 				C255D69B1E56BFA000455B47 /* DateCollectionViewDataSource.swift in Sources */,
+				C255D6F01E596D6700455B47 /* CoreDataStack.swift in Sources */,
 				C255D6931E568C3300455B47 /* DateCollectionVC.swift in Sources */,
 				C255D6951E568C4800455B47 /* TimeCollectionVC.swift in Sources */,
 				C255D6B21E59102F00455B47 /* MyReservationViewCell.swift in Sources */,
 				C255D6871E5674DD00455B47 /* DateCollectionViewCell.swift in Sources */,
+				C255D6BA1E59659200455B47 /* WFCodingChallenge.xcdatamodeld in Sources */,
 				C255D6AC1E578EB200455B47 /* PickerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +427,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C255D6B91E59659200455B47 /* WFCodingChallenge.xcdatamodel */,
+			);
+			currentVersion = C255D6B91E59659200455B47 /* WFCodingChallenge.xcdatamodel */;
+			name = WFCodingChallenge.xcdatamodeld;
+			path = ../WFCodingChallenge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C2CCE56E1E55A0F20045BBC1 /* Project object */;
 }
