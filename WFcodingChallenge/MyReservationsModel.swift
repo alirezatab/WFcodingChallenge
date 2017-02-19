@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+@available(iOS 10.0, *)
 class MyReservationsModel: NSObject {
     
     //Mark: - Global Private variable

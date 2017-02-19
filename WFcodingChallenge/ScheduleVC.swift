@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+@available(iOS 10.0, *)
 class ScheduleVC: UIViewController {
 
     //MARK: - IBOutlets
@@ -144,6 +145,7 @@ class ScheduleVC: UIViewController {
 }
 
 // MARK: - Picker View Delegate
+@available(iOS 10.0, *)
 extension ScheduleVC : UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
@@ -167,6 +169,7 @@ extension ScheduleVC : UIPickerViewDelegate {
 }
 
 // mark: - Picker View Custom Delegate
+@available(iOS 10.0, *)
 extension ScheduleVC : PickerViewCustomDelegate {
     func showPickerView() {
         pickerHelperView.isHidden = false
@@ -174,6 +177,7 @@ extension ScheduleVC : PickerViewCustomDelegate {
 }
 
 // mark: - Date Selection Custom Delegate
+@available(iOS 10.0, *)
 extension ScheduleVC : DateSelectionDelegate {
     func isDateSelected(_ isSelected: Bool,
                         weekday: String,
@@ -190,6 +194,7 @@ extension ScheduleVC : DateSelectionDelegate {
 }
 
 // mark: - Time Selection Custom Delegate
+@available(iOS 10.0, *)
 extension ScheduleVC : TimeSelectionDelegate {
     func isTimeSelected(_ isSelected: Bool,
                         selectedTime: String) {
