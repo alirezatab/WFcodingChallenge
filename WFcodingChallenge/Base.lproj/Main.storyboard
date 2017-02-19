@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--My ReservationVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WFcodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MyReservationVC" customModule="WFcodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,7 +51,7 @@
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iFs-pY-r4H">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96460121870040894" green="0.96476620435714722" blue="0.96459084749221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PKi-SA-V0q">
                                     <size key="itemSize" width="373" height="264"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -59,7 +59,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyReservationVC" id="Sh8-Ll-hhQ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyReservationVC" id="Sh8-Ll-hhQ" customClass="MyReservationViewCell" customModule="WFcodingChallenge" customModuleProvider="target">
                                         <rect key="frame" x="1" y="0.0" width="373" height="264"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -166,6 +166,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="5b0-Xx-srY" firstAttribute="top" secondItem="1py-8E-omh" secondAttribute="bottom" constant="16" id="0oR-Pw-mgu"/>
                                             <constraint firstItem="5b0-Xx-srY" firstAttribute="top" secondItem="1py-8E-omh" secondAttribute="bottom" constant="16" id="175-Ng-kpF"/>
@@ -192,6 +193,16 @@
                                             <constraint firstItem="5b0-Xx-srY" firstAttribute="leading" secondItem="Sh8-Ll-hhQ" secondAttribute="leadingMargin" id="vK5-TF-wzM"/>
                                             <constraint firstItem="jcO-eJ-9VP" firstAttribute="top" secondItem="Z1d-Oo-Gl2" secondAttribute="bottom" constant="12" id="vjw-N3-QOy"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="DateLabel" destination="c7k-5j-8wd" id="8fr-Qu-c8G"/>
+                                            <outlet property="cancelButton" destination="VqS-pK-E7f" id="gc0-DU-5zM"/>
+                                            <outlet property="durationLabel" destination="EEx-VQ-d7Z" id="Ax9-3T-HJc"/>
+                                            <outlet property="massageDescriptionLabel" destination="1py-8E-omh" id="97B-ff-icU"/>
+                                            <outlet property="massageTypeLabel" destination="Z1d-Oo-Gl2" id="hLQ-qH-MUj"/>
+                                            <outlet property="partySizeLabel" destination="jcO-eJ-9VP" id="z8V-93-Acm"/>
+                                            <outlet property="rescheduleButton" destination="5b0-Xx-srY" id="vmi-rd-PfB"/>
+                                            <outlet property="timeLabel" destination="THd-Ig-unT" id="lMy-bV-Fth"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -207,6 +218,9 @@
                             <constraint firstAttribute="trailing" secondItem="QUS-en-RH6" secondAttribute="trailing" id="ujJ-ej-O9C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="iFs-pY-r4H" id="94k-XL-ojh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -459,7 +473,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="isReservatioButtonPressed:" destination="8bH-cl-sId" eventType="touchUpInside" id="cvM-Bb-x4F"/>
+                                    <segue destination="cyT-um-zfP" kind="unwind" unwindAction="unwindToMyReservation:" id="xUv-rK-ZNF"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkB-Mg-gWL">
@@ -579,6 +593,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOP-M3-5IB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cyT-um-zfP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2904.8000000000002" y="117.39130434782609"/>
         </scene>

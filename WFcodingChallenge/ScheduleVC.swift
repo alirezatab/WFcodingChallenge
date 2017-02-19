@@ -50,13 +50,14 @@ class ScheduleVC: UIViewController {
     }
     
     func shouldEnableReservationButton() {
-        print(isTimeSelected)
-        print(isDateSelected)
-        
-        
+        //print(isTimeSelected)
+        //print(isDateSelected)
         if isTimeSelected && isDateSelected {
             reservationButton.isEnabled = true
             reservationButton.backgroundColor = UIColor(colorLiteralRed: 2/255.0, green: 107/255.0, blue: 197/255.0, alpha: 1.0)
+        } else {
+            reservationButton.isEnabled = false
+            reservationButton.backgroundColor = UIColor(colorLiteralRed: 130/255.0, green: 177/255.0, blue: 222/255.0, alpha: 1.0)
         }
     }
     
@@ -70,10 +71,6 @@ class ScheduleVC: UIViewController {
     
     @IBAction func onCancelButtonPressed(_ sender: UIBarButtonItem) {
         pickerHelperView.isHidden = true
-    }
-    
-    @IBAction func isReservatioButtonPressed(_ sender: UIButton) {
-        // pop nav bar and send data
     }
     
     // MARK: - Memory Warning
@@ -129,6 +126,7 @@ extension ScheduleVC : PickerViewCustomDelegate {
 extension ScheduleVC : DateSelectionDelegate {
     func isDateSelected(_ isSelected: Bool) {
         self.isDateSelected = isSelected
+        print(isDateSelected)
         shouldEnableReservationButton()
     }
 }
@@ -137,6 +135,7 @@ extension ScheduleVC : DateSelectionDelegate {
 extension ScheduleVC : TimeSelectionDelegate {
     func isTimeSelected(_ isSelected: Bool) {
         self.isTimeSelected = isSelected
+        print(isTimeSelected)
         shouldEnableReservationButton()
     }
     
