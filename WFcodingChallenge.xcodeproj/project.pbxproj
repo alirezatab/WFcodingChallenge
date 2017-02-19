@@ -90,10 +90,21 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
-		C255D6C31E59679C00455B47 /* Service */ = {
+		C255D6C31E59679C00455B47 /* DataBaseManager */ = {
 			isa = PBXGroup;
 			children = (
 				C255D6EF1E596D6700455B47 /* CoreDataStack.swift */,
+			);
+			name = DataBaseManager;
+			sourceTree = "<group>";
+		};
+		C25A84F01E5A45F4009843CF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */,
+				C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */,
+				C2CCE5851E55A0F20045BBC1 /* Info.plist */,
+				C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -117,16 +128,13 @@
 		C2CCE5781E55A0F20045BBC1 /* WFcodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				C255D6C31E59679C00455B47 /* Service */,
+				C255D6C31E59679C00455B47 /* DataBaseManager */,
 				C2CCE5931E55E5560045BBC1 /* Model */,
 				C2CCE5921E55E54D0045BBC1 /* View */,
 				C2CCE58F1E55DE880045BBC1 /* ViewControllers */,
-				C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */,
+				C25A84F01E5A45F4009843CF /* Service */,
 				C2CCE57D1E55A0F20045BBC1 /* Main.storyboard */,
-				C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */,
 				C2CCE5821E55A0F20045BBC1 /* LaunchScreen.storyboard */,
-				C2CCE5851E55A0F20045BBC1 /* Info.plist */,
-				C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */,
 			);
 			path = WFcodingChallenge;
 			sourceTree = "<group>";
