@@ -22,6 +22,10 @@ class ScheduleVC: UIViewController {
     fileprivate var partySizeString = String()
     fileprivate var isDateSelected = Bool()
     fileprivate var isTimeSelected = Bool()
+    fileprivate var selectedTime = String()
+    fileprivate var selectedWeekday = String()
+    fileprivate var selectedDayOfMonthNumber = String()
+    fileprivate var currentMonth = String()
     private var dateFormatter = DateFormatter()
     private var myReservationsClassName = String()
     private let pickerDataSoure = PickerViewDataSource()
@@ -65,15 +69,22 @@ class ScheduleVC: UIViewController {
         }
     }
     
+    func getYear() -> String {
+        let currentDate = NSDate()
+        dateFormatter.dateFormat = "YYYY"
+        return dateFormatter.string(from: currentDate as Date)
+    }
+    
     // save to coreData when reservation button is pressed
     @IBAction func onReservationButtonPressed(_ sender: UIButton) {
         let myReservation : MyReservations = NSEntityDescription.insertNewObject(forEntityName: myReservationsClassName, into: CoreDataStack.getContext()) as! MyReservations
         
         myReservation.partySize = self.partySizeString
         myReservation.messageType = "Massage focused on the deepest layer of muscles to target knots and release chronic muscle tension."
-        myReservation.reservationDate = nil
-        myReservation.reservationDay = nil
-        myReservation.reservationTime = nil
+        
+        myReservation.reservationDate = "\(self.currentMonth) \(self.selectedDayOfMonthNumber), \(getYear())"
+        myReservation.reservationDay = "\(self.selectedWeekday)"
+        myReservation.reservationTime = self.selectedTime
         
         CoreDataStack.saveContext()
     }
@@ -143,19 +154,23 @@ extension ScheduleVC : PickerViewCustomDelegate {
 
 // mark: - Date Selection Custom Delegate
 extension ScheduleVC : DateSelectionDelegate {
-    func isDateSelected(_ isSelected: Bool) {
+    func isDateSelected(_ isSelected: Bool, Weekday: String, dayOfMonthNumber: String, currentMonth: String) {
         self.isDateSelected = isSelected
-        print(isDateSelected)
+        self.selectedWeekday = Weekday;
+        self.selectedDayOfMonthNumber = dayOfMonthNumber
+        self.currentMonth = currentMonth
+        
         shouldEnableReservationButton()
     }
 }
 
 // mark: - Time Selection Custom Delegate
 extension ScheduleVC : TimeSelectionDelegate {
-    func isTimeSelected(_ isSelected: Bool) {
+    func isTimeSelected(_ isSelected: Bool, selectedTime: String) {
         self.isTimeSelected = isSelected
+        self.selectedTime = selectedTime
+        
         print(isTimeSelected)
         shouldEnableReservationButton()
     }
-    
 }

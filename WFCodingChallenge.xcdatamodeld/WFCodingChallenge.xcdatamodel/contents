@@ -3,9 +3,9 @@
     <entity name="MyReservations" representedClassName="MyReservations" syncable="YES">
         <attribute name="messageType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="partySize" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reservationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="reservationDay" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="reservationTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="reservationDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reservationDay" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reservationTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="MyReservations" positionX="-36" positionY="9" width="128" height="120"/>

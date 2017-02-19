@@ -2,7 +2,7 @@
 //  MyReservations+CoreDataProperties.swift
 //  WFcodingChallenge
 //
-//  Created by ALIREZA TABRIZI on 2/18/17.
+//  Created by ALIREZA TABRIZI on 2/19/17.
 //  Copyright © 2017 AR-T.com, Inc. All rights reserved.
 //
 
@@ -18,8 +18,8 @@ extension MyReservations {
 
     @NSManaged public var messageType: String?
     @NSManaged public var partySize: String?
-    @NSManaged public var reservationDate: NSDate?
-    @NSManaged public var reservationDay: NSDate?
-    @NSManaged public var reservationTime: NSDate?
+    @NSManaged public var reservationDate: String?
+    @NSManaged public var reservationDay: String?
+    @NSManaged public var reservationTime: String?
 
 }

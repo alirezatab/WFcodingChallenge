@@ -10,7 +10,7 @@ import UIKit
 
 // set custom delegate for time selection
 protocol TimeSelectionDelegate {
-    func isTimeSelected(_ isSelected: Bool)
+    func isTimeSelected(_ isSelected: Bool, selectedTime: String)
 }
 
 class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
@@ -43,7 +43,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         }
         
         if timeSelectionDelegate != nil {
-            timeSelectionDelegate?.isTimeSelected(isSelected)
+            timeSelectionDelegate?.isTimeSelected(isSelected, selectedTime: selectedCell.timeLabel.text!)
         }
     }
     
@@ -55,7 +55,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         isSelected = false
         
         if timeSelectionDelegate != nil {
-            timeSelectionDelegate?.isTimeSelected(isSelected)
+            timeSelectionDelegate?.isTimeSelected(isSelected, selectedTime: selectedCell.timeLabel.text!)
         }
     }
 

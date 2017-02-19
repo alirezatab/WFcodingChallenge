@@ -10,7 +10,7 @@ import UIKit
 
 // set custom delegate for date selection
 protocol DateSelectionDelegate {
-    func isDateSelected(_ isSelected: Bool)
+    func isDateSelected(_ isSelected: Bool, Weekday: String, dayOfMonthNumber: String, currentMonth: String)
 }
 
 class DateCollectionVC: UIViewController, UICollectionViewDelegate {
@@ -47,19 +47,21 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     // user taps cell & check Mark appreas or disappears
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
+        //print(selectedCell.dayOfMonthNumberLabel.text)
+        //print(selectedCell.weekdayLabel.text)
         
-        // checks to see if same cell was tapped again
+        // checks to see if same cell was tapped or not
         if !isSelected {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
-
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
         }
         
+        // if cell is selected, send the data bool of if selected
         if dateSelectionDelegate != nil {
-            dateSelectionDelegate?.isDateSelected(isSelected)
+            dateSelectionDelegate?.isDateSelected(isSelected, Weekday: selectedCell.weekdayLabel.text!, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
         }
     }
     
@@ -71,7 +73,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         isSelected = false
         
         if dateSelectionDelegate != nil {
-            dateSelectionDelegate?.isDateSelected(isSelected)
+            dateSelectionDelegate?.isDateSelected(isSelected, Weekday: selectedCell.weekdayLabel.text!, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
         }
     }
     
