@@ -30,11 +30,11 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
         
         
         // setup the size o the scrollView - 3 is cause we have 3 pages
-        scrollView?.contentSize = CGSize(width: (scrollWidth * 3), height: scrollHeight)
+        scrollView?.contentSize = CGSize(width: (scrollWidth * 3),
+                                         height: scrollHeight)
         
         //set the delegate of control view
         scrollView?.delegate = self;
-        
         scrollView?.isPagingEnabled = true
         
         setupOfferPages()
@@ -64,14 +64,22 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
             
             // create & insert imageview inside scrollerView
             let imageView = UIImageView.init()
-            imageView.frame = CGRect(x: scrollWidth * CGFloat (i), y: 0, width: scrollWidth,height: scrollHeight)
+            imageView.frame = CGRect(x: scrollWidth * CGFloat (i),
+                                     y: 0,
+                                     width: scrollWidth,
+                                     height: scrollHeight)
             
             // create & insert button inside scrollerView
-            let frame = CGRect(x: scrollWidth * CGFloat (i) + 25, y: (view.bounds.height/3.35), width: 175, height: 44)
+            let frame = CGRect(x: scrollWidth * CGFloat (i) + 25,
+                               y: (view.bounds.height/3.35),
+                               width: 175,
+                               height: 44)
             reserveButton = UIButton(frame: frame)
             reserveButton.backgroundColor = .blue
             reserveButton.setTitle("RESERVATION", for: .normal)
-            reserveButton.addTarget(self, action: #selector(onReservationButtonPressed), for: .touchUpInside)
+            reserveButton.addTarget(self,
+                                    action: #selector(onReservationButtonPressed),
+                                    for: .touchUpInside)
             
             // round the edges of Reservation Button
             reserveButton.layer.cornerRadius = 5

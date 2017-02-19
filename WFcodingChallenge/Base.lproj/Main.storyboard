@@ -96,8 +96,8 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THd-Ig-unT">
-                                                            <rect key="frame" x="270" y="8" width="72" height="26.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THd-Ig-unT">
+                                                            <rect key="frame" x="242" y="8" width="100" height="27"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                                         <constraint firstItem="c7k-5j-8wd" firstAttribute="leading" secondItem="7JI-Bd-tsL" secondAttribute="leading" constant="8" id="MWc-pg-sb2"/>
                                                         <constraint firstAttribute="trailing" secondItem="THd-Ig-unT" secondAttribute="trailing" constant="12" id="bJu-Ej-Lsv"/>
                                                         <constraint firstItem="THd-Ig-unT" firstAttribute="top" secondItem="7JI-Bd-tsL" secondAttribute="top" constant="8" id="ees-yK-S0N"/>
-                                                        <constraint firstItem="THd-Ig-unT" firstAttribute="leading" secondItem="c7k-5j-8wd" secondAttribute="trailing" constant="60" id="exT-0y-oce"/>
+                                                        <constraint firstItem="THd-Ig-unT" firstAttribute="leading" secondItem="c7k-5j-8wd" secondAttribute="trailing" constant="32" id="exT-0y-oce"/>
                                                         <constraint firstItem="c7k-5j-8wd" firstAttribute="top" secondItem="7JI-Bd-tsL" secondAttribute="top" constant="8" id="jbS-0l-HTc"/>
                                                         <constraint firstAttribute="bottom" secondItem="c7k-5j-8wd" secondAttribute="bottom" constant="8" id="kB0-SK-fBS"/>
                                                     </constraints>
@@ -124,7 +124,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DURATION" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEx-VQ-d7Z">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1H" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEx-VQ-d7Z">
                                                     <rect key="frame" x="205" y="88" width="142" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="EEx-VQ-d7Z" secondAttribute="height" multiplier="10:3" constant="47.666666666666657" id="JDT-hY-eDk"/>

@@ -22,6 +22,11 @@ class MyReservationVC: UIViewController {
         self.collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = MyReservationCustomFlowLayout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

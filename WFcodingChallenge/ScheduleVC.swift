@@ -37,6 +37,8 @@ class ScheduleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        partySizeString = "1"
+        
         myReservationsClassName = String(describing: MyReservations.self)
         
         // set PickerView DataSource to Model DataSource
@@ -62,10 +64,16 @@ class ScheduleVC: UIViewController {
         //print(isDateSelected)
         if isTimeSelected && isDateSelected {
             reservationButton.isEnabled = true
-            reservationButton.backgroundColor = UIColor(colorLiteralRed: 2/255.0, green: 107/255.0, blue: 197/255.0, alpha: 1.0)
+            reservationButton.backgroundColor = UIColor(colorLiteralRed: 2/255.0,
+                                                        green: 107/255.0,
+                                                        blue: 197/255.0,
+                                                        alpha: 1.0)
         } else {
             reservationButton.isEnabled = false
-            reservationButton.backgroundColor = UIColor(colorLiteralRed: 130/255.0, green: 177/255.0, blue: 222/255.0, alpha: 1.0)
+            reservationButton.backgroundColor = UIColor(colorLiteralRed: 130/255.0,
+                                                        green: 177/255.0,
+                                                        blue: 222/255.0,
+                                                        alpha: 1.0)
         }
     }
     
@@ -77,7 +85,8 @@ class ScheduleVC: UIViewController {
     
     // save to coreData when reservation button is pressed
     @IBAction func onReservationButtonPressed(_ sender: UIButton) {
-        let myReservation : MyReservations = NSEntityDescription.insertNewObject(forEntityName: myReservationsClassName, into: CoreDataStack.getContext()) as! MyReservations
+        let myReservation : MyReservations = NSEntityDescription.insertNewObject(forEntityName: myReservationsClassName,
+                                                                                 into: CoreDataStack.getContext()) as! MyReservations
         
         myReservation.partySize = self.partySizeString
         myReservation.reservationDate = "\(self.currentMonth) \(self.selectedDayOfMonthNumber), \(getYear())"
@@ -92,7 +101,9 @@ class ScheduleVC: UIViewController {
         pickerHelperView.isHidden = true
         
         let partSizeDict : [String: String] = ["partySize": partySizeString]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SetPartySizeLabel"), object: self, userInfo: partSizeDict)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SetPartySizeLabel"),
+                                        object: self,
+                                        userInfo: partSizeDict)
     }
     
     @IBAction func onCancelButtonPressed(_ sender: UIBarButtonItem) {
