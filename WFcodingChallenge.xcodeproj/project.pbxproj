@@ -23,6 +23,7 @@
 		C255D6AE1E59079300455B47 /* MyReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6AD1E59079300455B47 /* MyReservationVC.swift */; };
 		C255D6B01E590D6D00455B47 /* MyReservationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6AF1E590D6D00455B47 /* MyReservationDataSource.swift */; };
 		C255D6B21E59102F00455B47 /* MyReservationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B11E59102F00455B47 /* MyReservationViewCell.swift */; };
+		C255D6B41E591B3A00455B47 /* MyReservationCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B31E591B3A00455B47 /* MyReservationCustomFlowLayout.swift */; };
 		C2CCE57A1E55A0F20045BBC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */; };
 		C2CCE57F1E55A0F20045BBC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE57D1E55A0F20045BBC1 /* Main.storyboard */; };
 		C2CCE5811E55A0F20045BBC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		C255D6AD1E59079300455B47 /* MyReservationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationVC.swift; sourceTree = "<group>"; };
 		C255D6AF1E590D6D00455B47 /* MyReservationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationDataSource.swift; sourceTree = "<group>"; };
 		C255D6B11E59102F00455B47 /* MyReservationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationViewCell.swift; sourceTree = "<group>"; };
+		C255D6B31E591B3A00455B47 /* MyReservationCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationCustomFlowLayout.swift; sourceTree = "<group>"; };
 		C2CCE5761E55A0F20045BBC1 /* WFcodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WFcodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2CCE57E1E55A0F20045BBC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				C255D6A01E56CEBC00455B47 /* TimeCollectionViewCell.swift */,
 				C255D6A41E576A0200455B47 /* TimeCustomFlowLayout.swift */,
 				C255D6B11E59102F00455B47 /* MyReservationViewCell.swift */,
+				C255D6B31E591B3A00455B47 /* MyReservationCustomFlowLayout.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				C2CCE58E1E55DE820045BBC1 /* ScheduleVC.swift in Sources */,
 				C255D69F1E56CEA500455B47 /* TimeCollectionViewDataSource.swift in Sources */,
 				C255D6A51E576A0200455B47 /* TimeCustomFlowLayout.swift in Sources */,
+				C255D6B41E591B3A00455B47 /* MyReservationCustomFlowLayout.swift in Sources */,
 				C255D69D1E56CE9100455B47 /* TimeModel.swift in Sources */,
 				C255D6AA1E578CE500455B47 /* PickerViewDataSource.swift in Sources */,
 				C255D6991E56BB6B00455B47 /* DateModel.swift in Sources */,

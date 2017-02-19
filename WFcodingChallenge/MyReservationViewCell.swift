@@ -30,11 +30,7 @@ class MyReservationViewCell: UICollectionViewCell {
     }
     
     func setup() {
-//        rescheduleButton.layer.cornerRadius = 5
-//        rescheduleButton.layer.masksToBounds = true
-//        
-//        cancelButton.layer.cornerRadius = 5
-//        cancelButton.layer.masksToBounds = true
+        self.layer.borderWidth = 0.75
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
-    
 }
