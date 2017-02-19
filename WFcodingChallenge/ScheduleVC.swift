@@ -22,6 +22,7 @@ class ScheduleVC: UIViewController {
     fileprivate var partySizeString = String()
     fileprivate var isDateSelected = Bool()
     fileprivate var isTimeSelected = Bool()
+    private var dateFormatter = DateFormatter()
     private var myReservationsClassName = String()
     private let pickerDataSoure = PickerViewDataSource()
     private let massageOptionVCidentifier = "MassageOptionVC"
