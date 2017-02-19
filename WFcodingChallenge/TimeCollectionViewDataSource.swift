@@ -8,13 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "TimeCollectionViewCell"
 
 class TimeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
+    //MARK: - Global Private constant
     private let dataSource = TimeModel()
     private let dateFormatter = DateFormatter()
+    private let reuseIdentifier = "TimeCollectionViewCell"
 
+    //Mark: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         

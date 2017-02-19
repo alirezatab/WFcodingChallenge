@@ -19,6 +19,7 @@ class DateModel: NSObject {
 
     //Mark: - Private Custom methods
     private func getStartOfMonth() -> Date {
+        
         // get month and year date component fromt current date
         componentsFirst = calendar.dateComponents([.year, .month],
                                                   from: currentDate as Date) as NSDateComponents
@@ -45,7 +46,7 @@ class DateModel: NSObject {
     }
     
     //Mark: - Public Custom methods
-    // puts all the days of month into dates Array
+    // puts all the days of month and return it as array of Dates
     func getAllDaysOfMonth() -> [Date] {
 
         let startOfMonth = getStartOfMonth()

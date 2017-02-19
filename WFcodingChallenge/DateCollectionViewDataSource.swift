@@ -12,6 +12,7 @@ private let reuseIdentifier = "DateCollectionViewCell"
 
 class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
+    //Mark: - Global Private constants
     private let dateFormatter = DateFormatter()
     private let dataSource = DateModel()
     
@@ -27,7 +28,7 @@ class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DateCollectionViewCell
         
-        // for 3 letter day
+        // for 3 letter day EEE
         dateFormatter.dateFormat = "EEE"
         let dates = dataSource.getAllDaysOfMonth()
         

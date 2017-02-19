@@ -10,6 +10,7 @@ import UIKit
 
 class TimeModel: NSObject {
 
+    //MARK: - Global Private constants and variables
     private let calendar = NSCalendar.current
     private let components = NSDateComponents()
     private let dateFormatter = DateFormatter()
@@ -17,7 +18,8 @@ class TimeModel: NSObject {
     private var openingHour = "9:00 AM"
     private var reservationTimes : [Date] = []
 
-
+    
+    //MARK: - Custom Methods
     func getReservationTimeIntervals() -> [Date] {
         
         // set the starting hour

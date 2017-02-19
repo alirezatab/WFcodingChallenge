@@ -14,6 +14,7 @@ class DateCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dayOfMonthNumberLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
 
+    //Mark: - custom Initilizers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -24,6 +25,7 @@ class DateCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
+    //Mark: - custom Initilizer
     func setup() {
         self.layer.borderWidth = 0.75
         self.layer.borderColor = UIColor.lightGray.cgColor
