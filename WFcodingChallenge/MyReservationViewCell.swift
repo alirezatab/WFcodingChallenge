@@ -10,6 +10,7 @@ import UIKit
 
 class MyReservationViewCell: UICollectionViewCell {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var massageTypeLabel: UILabel!
@@ -19,6 +20,7 @@ class MyReservationViewCell: UICollectionViewCell {
     @IBOutlet weak var rescheduleButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    //Mark: - Custom Inilitiazers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -29,6 +31,8 @@ class MyReservationViewCell: UICollectionViewCell {
         setup()
     }
     
+    //Mark: - override cell size
+    // create a cell based on customized width and height    
     func setup() {
         self.layer.borderWidth = 0.75
         self.layer.borderColor = UIColor.lightGray.cgColor

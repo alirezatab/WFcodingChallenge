@@ -10,9 +10,11 @@ import UIKit
 
 class TimeCustomFlowLayout: UICollectionViewFlowLayout {
 
+    //Mark: - Private Global Constats
     private let itemsPerRow: CGFloat = 3.5
     private let itemsPerColumn: CGFloat = 3.5
 
+    //Mark: - Custom Inilitiazers
     override init() {
         super.init()
         setup()
@@ -23,12 +25,16 @@ class TimeCustomFlowLayout: UICollectionViewFlowLayout {
         setup()
     }
     
+    //Mark: - custom Method
+    // setup the flow layout between the cells & scroll Direction
     func setup() {
         self.minimumLineSpacing = 10
         self.minimumInteritemSpacing = 5
         self.scrollDirection = .horizontal
     }
     
+    //Mark: - override cell size
+    // create a cell based on customized width and height
     override var itemSize: CGSize{
         set {
             

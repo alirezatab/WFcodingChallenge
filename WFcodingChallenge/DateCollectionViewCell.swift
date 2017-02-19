@@ -9,7 +9,8 @@
 import UIKit
 
 class DateCollectionViewCell: UICollectionViewCell {
-    
+
+    //MARK: - IBOutlets
     @IBOutlet weak var weekdayLabel: UILabel!
     @IBOutlet weak var dayOfMonthNumberLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
@@ -25,7 +26,8 @@ class DateCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
-    //Mark: - custom Initilizer
+    //Mark: - custom Method
+    // created border around the cell
     func setup() {
         self.layer.borderWidth = 0.75
         self.layer.borderColor = UIColor.lightGray.cgColor

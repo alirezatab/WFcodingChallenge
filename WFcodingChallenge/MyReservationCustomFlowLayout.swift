@@ -8,13 +8,14 @@
 
 import UIKit
 
-
 class MyReservationCustomFlowLayout: UICollectionViewFlowLayout {
+    
+    //Mark: - Private Global Constats
     private let itemsPerRow: CGFloat = 2.5
     private let itemsPerColumn: CGFloat = 2.5
     private let inset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10)
 
-    
+    //Mark: - Custom Inilitiazers
     override init() {
         super.init()
         setup()
@@ -25,12 +26,16 @@ class MyReservationCustomFlowLayout: UICollectionViewFlowLayout {
         setup()
     }
     
+    //Mark: - custom Method
+    // setup the flow layout between the cells & scroll Direction
     func setup() {
         self.minimumLineSpacing = 10
         self.minimumInteritemSpacing = 5
         self.scrollDirection = .vertical
     }
     
+    //Mark: - override cell size
+    // create a cell based on customized width and height
     override var itemSize: CGSize{
         set {
             
