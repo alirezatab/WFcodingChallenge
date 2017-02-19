@@ -80,7 +80,6 @@ class ScheduleVC: UIViewController {
         let myReservation : MyReservations = NSEntityDescription.insertNewObject(forEntityName: myReservationsClassName, into: CoreDataStack.getContext()) as! MyReservations
         
         myReservation.partySize = self.partySizeString
-        myReservation.messageType = "Massage focused on the deepest layer of muscles to target knots and release chronic muscle tension."
         myReservation.reservationDate = "\(self.currentMonth) \(self.selectedDayOfMonthNumber), \(getYear())"
         myReservation.reservationDay = "\(self.selectedWeekday)"
         myReservation.reservationTime = self.selectedTime

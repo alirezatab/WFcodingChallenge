@@ -16,7 +16,6 @@ extension MyReservations {
         return NSFetchRequest<MyReservations>(entityName: "MyReservations");
     }
 
-    @NSManaged public var messageType: String?
     @NSManaged public var partySize: String?
     @NSManaged public var reservationDate: String?
     @NSManaged public var reservationDay: String?
