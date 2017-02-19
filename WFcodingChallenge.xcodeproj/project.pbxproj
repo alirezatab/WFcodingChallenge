@@ -33,6 +33,8 @@
 		C2CCE58C1E55A49B0045BBC1 /* SpaServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */; };
 		C2CCE58E1E55DE820045BBC1 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */; };
 		C2CCE5911E55E5450045BBC1 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE5901E55E5450045BBC1 /* ScrollView.swift */; };
+		C2D708D01E597B2200AAEEAA /* MyReservations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D708CE1E597B2200AAEEAA /* MyReservations+CoreDataClass.swift */; };
+		C2D708D11E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D708CF1E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaServiceVC.swift; sourceTree = "<group>"; };
 		C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		C2CCE5901E55E5450045BBC1 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		C2D708CE1E597B2200AAEEAA /* MyReservations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyReservations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C2D708CF1E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyReservations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		C2CCE56D1E55A0F20045BBC1 = {
 			isa = PBXGroup;
 			children = (
+				C2D708CE1E597B2200AAEEAA /* MyReservations+CoreDataClass.swift */,
+				C2D708CF1E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift */,
 				C2CCE5781E55A0F20045BBC1 /* WFcodingChallenge */,
 				C2CCE5771E55A0F20045BBC1 /* Products */,
 			);
@@ -252,12 +258,14 @@
 				C255D6A51E576A0200455B47 /* TimeCustomFlowLayout.swift in Sources */,
 				C255D6B41E591B3A00455B47 /* MyReservationCustomFlowLayout.swift in Sources */,
 				C255D69D1E56CE9100455B47 /* TimeModel.swift in Sources */,
+				C2D708D01E597B2200AAEEAA /* MyReservations+CoreDataClass.swift in Sources */,
 				C255D6AA1E578CE500455B47 /* PickerViewDataSource.swift in Sources */,
 				C255D6991E56BB6B00455B47 /* DateModel.swift in Sources */,
 				C255D6A71E5775CE00455B47 /* DateCustomFlowLayout.swift in Sources */,
 				C255D69B1E56BFA000455B47 /* DateCollectionViewDataSource.swift in Sources */,
 				C255D6F01E596D6700455B47 /* CoreDataStack.swift in Sources */,
 				C255D6931E568C3300455B47 /* DateCollectionVC.swift in Sources */,
+				C2D708D11E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift in Sources */,
 				C255D6951E568C4800455B47 /* TimeCollectionVC.swift in Sources */,
 				C255D6B21E59102F00455B47 /* MyReservationViewCell.swift in Sources */,
 				C255D6871E5674DD00455B47 /* DateCollectionViewCell.swift in Sources */,
