@@ -10,9 +10,13 @@ import Foundation
 import CoreData
 
 class CoreDataStack{
-    
-    private init(){
         
+    private init(){
+
+    }
+    
+    class func getContext() -> NSManagedObjectContext {
+        return CoreDataStack.persistentContainer.viewContext
     }
     
     static var persistentContainer: NSPersistentContainer = {

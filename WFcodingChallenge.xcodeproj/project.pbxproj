@@ -66,8 +66,8 @@
 		C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaServiceVC.swift; sourceTree = "<group>"; };
 		C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		C2CCE5901E55E5450045BBC1 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
-		C2D708CE1E597B2200AAEEAA /* MyReservations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyReservations+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2D708CF1E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyReservations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C2D708CE1E597B2200AAEEAA /* MyReservations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MyReservations+CoreDataClass.swift"; path = "../MyReservations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C2D708CF1E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MyReservations+CoreDataProperties.swift"; path = "../MyReservations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +84,8 @@
 		C255D6C21E59674D00455B47 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				C2D708CE1E597B2200AAEEAA /* MyReservations+CoreDataClass.swift */,
+				C2D708CF1E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -99,8 +101,6 @@
 		C2CCE56D1E55A0F20045BBC1 = {
 			isa = PBXGroup;
 			children = (
-				C2D708CE1E597B2200AAEEAA /* MyReservations+CoreDataClass.swift */,
-				C2D708CF1E597B2200AAEEAA /* MyReservations+CoreDataProperties.swift */,
 				C2CCE5781E55A0F20045BBC1 /* WFcodingChallenge */,
 				C2CCE5771E55A0F20045BBC1 /* Products */,
 			);

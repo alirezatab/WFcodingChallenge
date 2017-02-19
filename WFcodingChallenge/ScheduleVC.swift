@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ScheduleVC: UIViewController {
 
@@ -17,19 +18,21 @@ class ScheduleVC: UIViewController {
     @IBOutlet weak var reservationButton: UIButton!
     
     //MARK: - Global Private constants
-    fileprivate var partySizeString = String()
     fileprivate let pickerData = PickerModel().getPickerData()
+    fileprivate var partySizeString = String()
     fileprivate var isDateSelected = Bool()
     fileprivate var isTimeSelected = Bool()
+    private var myReservationsClassName = String()
     private let pickerDataSoure = PickerViewDataSource()
     private let massageOptionVCidentifier = "MassageOptionVC"
     private let dateCollectionVCidentifier = "DateCollectionVC"
     private let timeCollectionVCidentifier = "TimeCollectionVC"
-
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myReservationsClassName = String(describing: MyReservations.self)
         
         // set PickerView DataSource to Model DataSource
         pickerView.dataSource = pickerDataSoure
@@ -61,6 +64,19 @@ class ScheduleVC: UIViewController {
         }
     }
     
+    // save to coreData when reservation button is pressed
+    @IBAction func onReservationButtonPressed(_ sender: UIButton) {
+        let myReservation : MyReservations = NSEntityDescription.insertNewObject(forEntityName: myReservationsClassName, into: CoreDataStack.getContext()) as! MyReservations
+        
+        myReservation.partySize = self.partySizeString
+        myReservation.messageType = "Massage focused on the deepest layer of muscles to target knots and release chronic muscle tension."
+        myReservation.reservationDate = nil
+        myReservation.reservationDay = nil
+        myReservation.reservationTime = nil
+        
+        CoreDataStack.saveContext()
+    }
+    
     // MARK: - IBActions
     @IBAction func onDoneButtonPressed(_ sender: UIBarButtonItem) {
         pickerHelperView.isHidden = true
@@ -72,6 +88,8 @@ class ScheduleVC: UIViewController {
     @IBAction func onCancelButtonPressed(_ sender: UIBarButtonItem) {
         pickerHelperView.isHidden = true
     }
+    
+    
     
     // MARK: - Memory Warning
     override func didReceiveMemoryWarning() {
