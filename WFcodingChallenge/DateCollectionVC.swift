@@ -10,7 +10,7 @@ import UIKit
 
 // set custom delegate for date selection
 protocol DateSelectionDelegate {
-    func isDateSelected(_ isSelected: Bool, Weekday: String, dayOfMonthNumber: String, currentMonth: String)
+    func isDateSelected(_ isSelected: Bool, weekday: String, dayOfMonthNumber: String, currentMonth: String)
 }
 
 class DateCollectionVC: UIViewController, UICollectionViewDelegate {
@@ -23,6 +23,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     private var daysInMonth = Int()
     private let dataSource = DateCollectionViewDataSource()
     private var isSelected = false
+    private var weekday = String()
     
     var dateSelectionDelegate : DateSelectionDelegate? = nil
     
@@ -47,8 +48,6 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     // user taps cell & check Mark appreas or disappears
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
-        //print(selectedCell.dayOfMonthNumberLabel.text)
-        //print(selectedCell.weekdayLabel.text)
         
         // checks to see if same cell was tapped or not
         if !isSelected {
@@ -59,9 +58,33 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
             isSelected = false
         }
         
+        // switch betwen text label so a full version can be passed
+        switch selectedCell.weekdayLabel.text! {
+        case "Mon":
+            self.weekday = "Monday"
+            break;
+        case "Tues":
+            self.weekday = "Tuesday"
+            break;
+        case "Wed":
+            self.weekday = "Wendsday"
+            break;
+        case "Thu":
+            self.weekday = "Thursday"
+            break;
+        case "Fri":
+            self.weekday = "Friday"
+            break;
+        case "Sat":
+            self.weekday = "Saturday"
+            break;
+        default:
+            self.weekday = "Sunday"
+        }
+        
         // if cell is selected, send the data bool of if selected
         if dateSelectionDelegate != nil {
-            dateSelectionDelegate?.isDateSelected(isSelected, Weekday: selectedCell.weekdayLabel.text!, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
+            dateSelectionDelegate?.isDateSelected(isSelected, weekday: self.weekday, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
         }
     }
     
@@ -73,7 +96,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         isSelected = false
         
         if dateSelectionDelegate != nil {
-            dateSelectionDelegate?.isDateSelected(isSelected, Weekday: selectedCell.weekdayLabel.text!, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
+            dateSelectionDelegate?.isDateSelected(isSelected, weekday: selectedCell.weekdayLabel.text!, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
         }
     }
     

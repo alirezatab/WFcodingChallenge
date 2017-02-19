@@ -81,7 +81,6 @@ class ScheduleVC: UIViewController {
         
         myReservation.partySize = self.partySizeString
         myReservation.messageType = "Massage focused on the deepest layer of muscles to target knots and release chronic muscle tension."
-        
         myReservation.reservationDate = "\(self.currentMonth) \(self.selectedDayOfMonthNumber), \(getYear())"
         myReservation.reservationDay = "\(self.selectedWeekday)"
         myReservation.reservationTime = self.selectedTime
@@ -154,9 +153,9 @@ extension ScheduleVC : PickerViewCustomDelegate {
 
 // mark: - Date Selection Custom Delegate
 extension ScheduleVC : DateSelectionDelegate {
-    func isDateSelected(_ isSelected: Bool, Weekday: String, dayOfMonthNumber: String, currentMonth: String) {
+    func isDateSelected(_ isSelected: Bool, weekday: String, dayOfMonthNumber: String, currentMonth: String) {
         self.isDateSelected = isSelected
-        self.selectedWeekday = Weekday;
+        self.selectedWeekday = weekday;
         self.selectedDayOfMonthNumber = dayOfMonthNumber
         self.currentMonth = currentMonth
         

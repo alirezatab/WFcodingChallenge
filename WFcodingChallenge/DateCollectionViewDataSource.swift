@@ -23,6 +23,7 @@ class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DateCollectionViewCell
         
+        // for 3 letter day
         dateFormatter.dateFormat = "EEE"
         let dates = dataSource.getAllDaysOfMonth()
         
