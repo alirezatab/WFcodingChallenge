@@ -91,7 +91,7 @@ class ScheduleVC: UIViewController {
                                                                                  into: CoreDataStack.getContext()) as! MyReservations
         
         myReservation.partySize = self.partySizeString
-        myReservation.reservationDate = "\(self.currentMonth) \(self.selectedDayOfMonthNumber), \(getYear())"
+        myReservation.reservationDate = "\(self.selectedWeekday), \(self.currentMonth) \(self.selectedDayOfMonthNumber), \(getYear())"
         myReservation.reservationDay = "\(self.selectedWeekday)"
         myReservation.reservationTime = self.selectedTime
         
