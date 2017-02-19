@@ -15,10 +15,13 @@ protocol PickerViewCustomDelegate {
 
 class MassageOptionVC: UITableViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var partySizeButton: UIButton!
     
+    // Mark: - Golbal public delegate variable
     var pickerViewCustomDelegate : PickerViewCustomDelegate? = nil
     
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,6 +57,7 @@ class MassageOptionVC: UITableViewController {
         }
     }
     
+    // MARK: - Memory Warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

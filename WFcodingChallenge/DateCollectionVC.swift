@@ -18,21 +18,24 @@ protocol DateSelectionDelegate {
 
 class DateCollectionVC: UIViewController, UICollectionViewDelegate {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var dateCollectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
     
-    private var dateFormatter = DateFormatter()
+    //MARK: - Global Private constants & Vriables
     private let currentDate = NSDate()
-    private var daysInMonth = Int()
     private let dataSource = DateCollectionViewDataSource()
+    private var dateFormatter = DateFormatter()
+    private var daysInMonth = Int()
     private var isSelected = false
     private var weekday = String()
     
+    // Mark: - Golbal public delegate variable
     var dateSelectionDelegate : DateSelectionDelegate? = nil
     
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         dateCollectionView.dataSource = dataSource
         dateCollectionView.delegate = self
@@ -42,27 +45,14 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         monthLabel.text = getMonth()
     }
     
+    //Mark: - Custom Methods
     // based on current Date, just extract the Month
     func getMonth() -> String {
         dateFormatter.dateFormat = "MMMM"
         return dateFormatter.string(from: currentDate as Date)
     }
     
-    // user taps cell & check Mark appreas or disappears
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        
-        let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
-        
-        // checks to see if same cell was tapped or not
-        if !isSelected {
-            selectedCell.checkMarkImageView.alpha = 0.75
-            isSelected = true
-        } else {
-            selectedCell.checkMarkImageView.alpha = 0
-            isSelected = false
-        }
-        
+    func getFullWeekdayString(_ selectedCell: DateCollectionViewCell) {
         // switch betwen text label so a full version can be passed
         switch selectedCell.weekdayLabel.text! {
         case "Mon":
@@ -86,6 +76,25 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         default:
             self.weekday = "Sunday"
         }
+    }
+    
+    //MARK: - Collection View Delegate
+    // user taps cell & check Mark appreas or disappears
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
+        
+        // checks to see if same cell was tapped or not
+        if !isSelected {
+            selectedCell.checkMarkImageView.alpha = 0.75
+            isSelected = true
+        } else {
+            selectedCell.checkMarkImageView.alpha = 0
+            isSelected = false
+        }
+        
+        getFullWeekdayString(selectedCell)
         
         // if cell is selected, send the data bool of if selected
         if dateSelectionDelegate != nil {
@@ -113,6 +122,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    //MARK: - Memory Warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

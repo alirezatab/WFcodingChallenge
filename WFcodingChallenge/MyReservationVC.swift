@@ -11,11 +11,13 @@ import CoreData
 
 class MyReservationVC: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //Mark: - Private Global Constats
     private let dataSource = MyReservationsDataSource()
 
-    
+    //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,12 +29,14 @@ class MyReservationVC: UIViewController {
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
     }
-
+    
+    // MARK: - Memory
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Unwind IBAction
     @IBAction func unwindToMyReservation(_ sender: UIStoryboardSegue) {
         
     }

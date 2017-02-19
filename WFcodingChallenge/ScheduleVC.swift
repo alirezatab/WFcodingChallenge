@@ -17,7 +17,7 @@ class ScheduleVC: UIViewController {
     @IBOutlet weak var pickerViewToolbar: UIToolbar!
     @IBOutlet weak var reservationButton: UIButton!
     
-    //MARK: - Global Private constants
+    //MARK: - Global fileprivate constants & Variables
     fileprivate let pickerData = PickerModel().getPickerData()
     fileprivate var partySizeString = String()
     fileprivate var isDateSelected = Bool()
@@ -26,6 +26,8 @@ class ScheduleVC: UIViewController {
     fileprivate var selectedWeekday = String()
     fileprivate var selectedDayOfMonthNumber = String()
     fileprivate var currentMonth = String()
+    
+    //MARK: - Global Private constants & Variables
     private var dateFormatter = DateFormatter()
     private var myReservationsClassName = String()
     private let pickerDataSoure = PickerViewDataSource()
