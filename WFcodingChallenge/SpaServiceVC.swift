@@ -40,7 +40,10 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
         setupOfferPages()
         
         // only leaves the arrow of the back button
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ",
+                                                                style: .plain,
+                                                                target: nil,
+                                                                action: nil)
         
         // change the color of back button to white
         self.navigationController?.navigationBar.tintColor = .white
@@ -74,6 +77,7 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
                                y: (view.bounds.height/3.35),
                                width: 175,
                                height: 44)
+            
             reserveButton = UIButton(frame: frame)
             reserveButton.backgroundColor = .blue
             reserveButton.setTitle("RESERVATION", for: .normal)
@@ -118,7 +122,8 @@ class SpaServiceVC: UIViewController, UIScrollViewDelegate {
     
     func onReservationButtonPressed(sender: UIButton!) {
         print("button pressed")
-        performSegue(withIdentifier: "ReservationButtonPressed", sender: sender)
+        performSegue(withIdentifier: "ReservationButtonPressed",
+                     sender: sender)
     }
     
     // MARK: - Memory

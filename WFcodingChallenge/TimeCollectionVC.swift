@@ -10,7 +10,8 @@ import UIKit
 
 // set custom delegate for time selection
 protocol TimeSelectionDelegate {
-    func isTimeSelected(_ isSelected: Bool, selectedTime: String)
+    func isTimeSelected(_ isSelected: Bool,
+                        selectedTime: String)
 }
 
 class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
@@ -30,7 +31,9 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
     }
     
     // user taps cell & check Mark appreas or disappears
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
         let selectedCell = collectionView.cellForItem(at: indexPath) as! TimeCollectionViewCell
         
         // checks to see if same cell was tapped again
@@ -43,19 +46,23 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         }
         
         if timeSelectionDelegate != nil {
-            timeSelectionDelegate?.isTimeSelected(isSelected, selectedTime: selectedCell.timeLabel.text!)
+            timeSelectionDelegate?.isTimeSelected(isSelected,
+                                                  selectedTime: selectedCell.timeLabel.text!)
         }
     }
     
     // user taps a different cell and check mark disappears
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didDeselectItemAt indexPath: IndexPath) {
+        
         let selectedCell = collectionView.cellForItem(at: indexPath) as! TimeCollectionViewCell
         
         selectedCell.checkMarkImageView.alpha = 0
         isSelected = false
         
         if timeSelectionDelegate != nil {
-            timeSelectionDelegate?.isTimeSelected(isSelected, selectedTime: selectedCell.timeLabel.text!)
+            timeSelectionDelegate?.isTimeSelected(isSelected,
+                                                  selectedTime: selectedCell.timeLabel.text!)
         }
     }
 

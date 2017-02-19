@@ -38,7 +38,8 @@ class MyReservationCustomFlowLayout: UICollectionViewFlowLayout {
             let width = (self.collectionView?.frame.width)! - inset.left - inset.right
             let height = ((self.collectionView?.frame.height)! - (itemsPerColumn - 1)) / itemsPerColumn
             
-            return CGSize(width: width, height: height)
+            return CGSize(width: width,
+                          height: height)
         }
     }
 

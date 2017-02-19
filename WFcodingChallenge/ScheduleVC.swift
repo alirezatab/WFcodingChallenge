@@ -68,7 +68,9 @@ class ScheduleVC: UIViewController {
                                                         green: 107/255.0,
                                                         blue: 197/255.0,
                                                         alpha: 1.0)
-        } else {
+        }
+        else
+        {
             reservationButton.isEnabled = false
             reservationButton.backgroundColor = UIColor(colorLiteralRed: 130/255.0,
                                                         green: 177/255.0,
@@ -141,15 +143,23 @@ class ScheduleVC: UIViewController {
 
 // MARK: - Picker View Delegate
 extension ScheduleVC : UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        
         return pickerData[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    func pickerView(_ pickerView: UIPickerView,
+                    rowHeightForComponent component: Int) -> CGFloat {
+        
         return 40.0
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView,
+                    didSelectRow row: Int,
+                    inComponent component: Int) {
+        
         partySizeString = pickerData[row]
     }
 }
@@ -163,7 +173,11 @@ extension ScheduleVC : PickerViewCustomDelegate {
 
 // mark: - Date Selection Custom Delegate
 extension ScheduleVC : DateSelectionDelegate {
-    func isDateSelected(_ isSelected: Bool, weekday: String, dayOfMonthNumber: String, currentMonth: String) {
+    func isDateSelected(_ isSelected: Bool,
+                        weekday: String,
+                        dayOfMonthNumber: String,
+                        currentMonth: String) {
+        
         self.isDateSelected = isSelected
         self.selectedWeekday = weekday;
         self.selectedDayOfMonthNumber = dayOfMonthNumber
@@ -175,7 +189,9 @@ extension ScheduleVC : DateSelectionDelegate {
 
 // mark: - Time Selection Custom Delegate
 extension ScheduleVC : TimeSelectionDelegate {
-    func isTimeSelected(_ isSelected: Bool, selectedTime: String) {
+    func isTimeSelected(_ isSelected: Bool,
+                        selectedTime: String) {
+        
         self.isTimeSelected = isSelected
         self.selectedTime = selectedTime
         

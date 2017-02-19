@@ -15,12 +15,17 @@ class TimeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     private let dataSource = TimeModel()
     private let dateFormatter = DateFormatter()
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        
         return dataSource.getReservationTimeIntervals().count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TimeCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                      for: indexPath) as! TimeCollectionViewCell
         
         // dateFormatter indicates how the string will look like
         dateFormatter.dateFormat = "hh:mm a"

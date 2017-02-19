@@ -10,7 +10,10 @@ import UIKit
 
 // set custom delegate for date selection
 protocol DateSelectionDelegate {
-    func isDateSelected(_ isSelected: Bool, weekday: String, dayOfMonthNumber: String, currentMonth: String)
+    func isDateSelected(_ isSelected: Bool,
+                        weekday: String,
+                        dayOfMonthNumber: String,
+                        currentMonth: String)
 }
 
 class DateCollectionVC: UIViewController, UICollectionViewDelegate {
@@ -46,7 +49,9 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     }
     
     // user taps cell & check Mark appreas or disappears
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
         let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
         
         // checks to see if same cell was tapped or not
@@ -84,19 +89,27 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         
         // if cell is selected, send the data bool of if selected
         if dateSelectionDelegate != nil {
-            dateSelectionDelegate?.isDateSelected(isSelected, weekday: self.weekday, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
+            dateSelectionDelegate?.isDateSelected(isSelected,
+                                                  weekday: self.weekday,
+                                                  dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!,
+                                                  currentMonth: getMonth())
         }
     }
     
     // user taps a different cell and check mark disappears
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didDeselectItemAt indexPath: IndexPath) {
+        
         let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
         
         selectedCell.checkMarkImageView.alpha = 0
         isSelected = false
         
         if dateSelectionDelegate != nil {
-            dateSelectionDelegate?.isDateSelected(isSelected, weekday: selectedCell.weekdayLabel.text!, dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!, currentMonth: getMonth())
+            dateSelectionDelegate?.isDateSelected(isSelected,
+                                                  weekday: selectedCell.weekdayLabel.text!,
+                                                  dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!,
+                                                  currentMonth: getMonth())
         }
     }
     

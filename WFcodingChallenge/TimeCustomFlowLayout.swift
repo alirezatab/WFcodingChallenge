@@ -36,7 +36,8 @@ class TimeCustomFlowLayout: UICollectionViewFlowLayout {
             let width = ((self.collectionView?.frame.width)! - (itemsPerRow - 1)) / itemsPerRow
             let height = ((self.collectionView?.frame.height)! - (itemsPerColumn - 1)) / itemsPerColumn
 
-            return CGSize(width: width, height: height)
+            return CGSize(width: width,
+                          height: height)
         }
     }
 }

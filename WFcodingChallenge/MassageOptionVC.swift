@@ -25,7 +25,10 @@ class MassageOptionVC: UITableViewController {
         configurePartySizeButton()
         
         // listener is looking to see a Party Size picker view is selected
-        NotificationCenter.default.addObserver(self, selector: #selector(self.setPartySizeLabel(_:)), name: NSNotification.Name(rawValue: "SetPartySizeLabel"), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.setPartySizeLabel(_:)),
+                                               name: NSNotification.Name(rawValue: "SetPartySizeLabel"),
+                                               object: nil)
     }
     
     //Mark: - Custom Methods
@@ -44,7 +47,6 @@ class MassageOptionVC: UITableViewController {
         }
     }
     
-    
     //Mark: - IBActions
     @IBAction func onPartySizeButtonPressed(_ sender: UIButton) {
         if pickerViewCustomDelegate != nil {
@@ -56,16 +58,4 @@ class MassageOptionVC: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -17,7 +17,8 @@ class PickerViewDataSource: NSObject, UIPickerViewDataSource {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
         
         return pickerDataSource.getPickerData().count
     }

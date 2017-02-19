@@ -10,14 +10,20 @@ import UIKit
 
 class MyReservationsDataSource: NSObject, UICollectionViewDataSource {
     
+    private let reuseIdentifier = "MyReservationVC"
     private let myReservationsDataSource = MyReservationsModel()
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        
         return myReservationsDataSource.getReservationsData().count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyReservationVC", for: indexPath) as! MyReservationViewCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                      for: indexPath) as! MyReservationViewCell
         
         let searchResults = myReservationsDataSource.getReservationsData()
         

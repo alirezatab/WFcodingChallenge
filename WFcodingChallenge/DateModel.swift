@@ -20,7 +20,8 @@ class DateModel: NSObject {
     //Mark: - Private Custom methods
     private func getStartOfMonth() -> Date {
         // get month and year date component fromt current date
-        componentsFirst = calendar.dateComponents([.year, .month], from: currentDate as Date) as NSDateComponents
+        componentsFirst = calendar.dateComponents([.year, .month],
+                                                  from: currentDate as Date) as NSDateComponents
         
         // get first day of month
         let startOfMonth = calendar.date(from: componentsFirst as DateComponents)!
@@ -37,7 +38,8 @@ class DateModel: NSObject {
         componentsLast.month = 1
         componentsLast.day = -1
         
-        let endOfMonth = calendar.date(byAdding: componentsLast as DateComponents, to: startOfMonth)!
+        let endOfMonth = calendar.date(byAdding: componentsLast as DateComponents,
+                                       to: startOfMonth)!
         
         return endOfMonth
     }
@@ -56,9 +58,14 @@ class DateModel: NSObject {
         var dates = [normalizedStartDate]
         var date = normalizedStartDate
         repeat {
-            date = calendar.date(byAdding: .day, value: 1, to: date)!
+            date = calendar.date(byAdding: .day,
+                                 value: 1,
+                                 to: date)!
+            
             dates.append(date as Date)
-        } while !calendar.isDate(date as Date, inSameDayAs: normalizedEndDate)
+            
+        } while !calendar.isDate(date as Date,
+                                 inSameDayAs: normalizedEndDate)
         
         return dates
     }
