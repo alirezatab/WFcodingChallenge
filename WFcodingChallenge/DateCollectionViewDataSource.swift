@@ -8,13 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "DateCollectionViewCell"
-
 class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     //Mark: - Global Private constants
     private let dateFormatter = DateFormatter()
     private let dataSource = DateModel()
+    private let reuseIdentifier = "DateCollectionViewCell"
     
     //Mark: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,

@@ -10,9 +10,11 @@ import UIKit
 
 class MyReservationsDataSource: NSObject, UICollectionViewDataSource {
     
+    //Mark: - Global Private constants
     private let reuseIdentifier = "MyReservationVC"
     private let myReservationsDataSource = MyReservationsModel()
     
+    //Mark: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
@@ -25,6 +27,17 @@ class MyReservationsDataSource: NSObject, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! MyReservationViewCell
         
+
+        populateCellsWithData(cell, indexPath: indexPath)
+        
+        setButtonUI(cell)
+        
+        return cell
+    }
+    
+    //Mark: - Custom functions
+    func populateCellsWithData(_ cell: MyReservationViewCell, indexPath: IndexPath) {
+        
         let searchResults = myReservationsDataSource.getReservationsData()
         
         let result = searchResults[indexPath.item]
@@ -34,7 +47,10 @@ class MyReservationsDataSource: NSObject, UICollectionViewDataSource {
         cell.massageTypeLabel.text = "Hot Stone Massage"
         cell.partySizeLabel.text = "PARTY SIZE - \(result.partySize!)"
         cell.timeLabel.text = result.reservationTime
-        
+    }
+    
+    // create rounder corner for the button and set contraints
+    func setButtonUI(_ cell: MyReservationViewCell) {
         cell.rescheduleButton.layer.cornerRadius = 5
         cell.rescheduleButton.layer.masksToBounds = true
         cell.rescheduleButton.frame = CGRect(x: 20,
@@ -49,7 +65,5 @@ class MyReservationsDataSource: NSObject, UICollectionViewDataSource {
                                          y: cell.frame.height - 20 - 40,
                                          width: (cell.frame.width/2) - 20 - 10,
                                          height: 40)
-        
-        return cell
     }
 }

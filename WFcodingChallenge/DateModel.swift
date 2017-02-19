@@ -10,6 +10,7 @@ import UIKit
 
 class DateModel: NSObject {
     
+    //Mark: - Private Global Constants & Variables
     private let currentDate = NSDate()
     private let calendar = NSCalendar.current
     private let lengthOfMonth : TimeInterval = 0
