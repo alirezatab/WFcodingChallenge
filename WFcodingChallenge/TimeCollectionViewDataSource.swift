@@ -15,7 +15,8 @@ class TimeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     private let dataSource = TimeModel()
     private let dateFormatter = DateFormatter()
     private let reuseIdentifier = "TimeCollectionViewCell"
-
+    private var defaults = UserDefaults.standard
+    
     //MARK: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -39,9 +40,11 @@ class TimeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         cell.timeLabel.text = dateFormatter.string(from: times[indexPath.row])
         
-        if !cell.isSelected {
-            cell.checkMarkImageView.alpha = 0
-        } else {
+        cell.checkMarkImageView.alpha = 0
+        
+        let savedIndexPathItem = defaults.bool(forKey: "Time - \(indexPath.item)")
+        
+        if savedIndexPathItem == true {
             cell.checkMarkImageView.alpha = 0.75
         }
         

@@ -22,6 +22,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
     //MARK: - Global Private constants & Variables
     private let dataSource = TimeCollectionViewDataSource()
     private var isSelected = false
+    private var defaults = UserDefaults.standard
     private var indexPathOfSelectedCell = IndexPath()
     
     // Mark: - Golbal public delegate variable
@@ -47,9 +48,12 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         if !isSelected {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
+            // save the selected cell in user defaults cause it disappears when cells are reused
+            defaults.set(true, forKey: "Date - \(indexPath.item)")
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
+            defaults.set(false, forKey: "Date - \(indexPath.item)")
         }
         
         if timeSelectionDelegate != nil {
@@ -66,6 +70,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         
         selectedCell.checkMarkImageView.alpha = 0
         isSelected = false
+        defaults.set(false, forKey: "Date - \(indexPath.item)")
         
         if timeSelectionDelegate != nil {
             timeSelectionDelegate?.isTimeSelected(isSelected,

@@ -101,7 +101,9 @@ class ScheduleVC: UIViewController {
         myReservation.reservationTime = self.selectedTime
         
         CoreDataStack.saveContext()
+        // when user pushes the reserved button, reset the userdefault for Date and Time selection
         defaults.set(false, forKey: "Date - \(self.selectedIndexPath.item)")
+        defaults.set(false, forKey: "Time - \(self.selectedIndexPath.item)")
     }
     
     // MARK: - IBActions
