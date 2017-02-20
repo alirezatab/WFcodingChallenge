@@ -13,7 +13,7 @@ protocol DateSelectionDelegate {
     func isDateSelected(_ isSelected: Bool,
                         weekday: String,
                         dayOfMonthNumber: String,
-                        currentMonth: String)
+                        currentMonth: String, indexPath: IndexPath)
 }
 
 class DateCollectionVC: UIViewController, UICollectionViewDelegate {
@@ -91,11 +91,11 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
             // save the selected cell in user defaults cause it disappears when cells are reused
-            defaults.set(true, forKey: "\(indexPath.item)")
+            defaults.set(true, forKey: "Date - \(indexPath.item)")
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
-            defaults.set(false, forKey: "\(indexPath.item)")
+            defaults.set(false, forKey: "Date - \(indexPath.item)")
         }
         
         getFullWeekdayString(selectedCell)
@@ -105,7 +105,8 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
             dateSelectionDelegate?.isDateSelected(isSelected,
                                                   weekday: self.weekday,
                                                   dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!,
-                                                  currentMonth: getMonth())
+                                                  currentMonth: getMonth(),
+                                                  indexPath: indexPath)
         }
     }
     
@@ -117,13 +118,14 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         
         selectedCell.checkMarkImageView.alpha = 0
         isSelected = false
-        defaults.set(false, forKey: "\(indexPath.item)")
+        defaults.set(false, forKey: "Date - \(indexPath.item)")
         
         if dateSelectionDelegate != nil {
             dateSelectionDelegate?.isDateSelected(isSelected,
                                                   weekday: selectedCell.weekdayLabel.text!,
                                                   dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!,
-                                                  currentMonth: getMonth())
+                                                  currentMonth: getMonth(),
+                                                  indexPath: indexPath)
         }
     }
     

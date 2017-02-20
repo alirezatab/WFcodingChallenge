@@ -27,14 +27,16 @@ class ScheduleVC: UIViewController {
     fileprivate var selectedWeekday = String()
     fileprivate var selectedDayOfMonthNumber = String()
     fileprivate var currentMonth = String()
+    fileprivate var selectedIndexPath = IndexPath()
     
     //MARK: - Global Private constants & Variables
-    private var dateFormatter = DateFormatter()
-    private var myReservationsClassName = String()
     private let pickerDataSoure = PickerViewDataSource()
     private let massageOptionVCidentifier = "MassageOptionVC"
     private let dateCollectionVCidentifier = "DateCollectionVC"
     private let timeCollectionVCidentifier = "TimeCollectionVC"
+    private var dateFormatter = DateFormatter()
+    private var defaults = UserDefaults.standard
+    private var myReservationsClassName = String()
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -99,6 +101,7 @@ class ScheduleVC: UIViewController {
         myReservation.reservationTime = self.selectedTime
         
         CoreDataStack.saveContext()
+        defaults.set(false, forKey: "Date - \(self.selectedIndexPath.item)")
     }
     
     // MARK: - IBActions
@@ -182,12 +185,14 @@ extension ScheduleVC : DateSelectionDelegate {
     func isDateSelected(_ isSelected: Bool,
                         weekday: String,
                         dayOfMonthNumber: String,
-                        currentMonth: String) {
+                        currentMonth: String,
+                        indexPath: IndexPath) {
         
         self.isDateSelected = isSelected
         self.selectedWeekday = weekday;
         self.selectedDayOfMonthNumber = dayOfMonthNumber
         self.currentMonth = currentMonth
+        self.selectedIndexPath = indexPath
         
         shouldEnableReservationButton()
     }
@@ -201,8 +206,6 @@ extension ScheduleVC : TimeSelectionDelegate {
         
         self.isTimeSelected = isSelected
         self.selectedTime = selectedTime
-        
-        
         
         print(isTimeSelected)
         shouldEnableReservationButton()
