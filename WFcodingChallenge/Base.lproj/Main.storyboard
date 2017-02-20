@@ -86,7 +86,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JI-Bd-tsL">
                                                     <rect key="frame" x="0.0" y="0.0" width="354" height="42.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day, Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-5j-8wd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day, Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-5j-8wd">
                                                             <rect key="frame" x="8" y="8" width="234" height="26.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="c7k-5j-8wd" secondAttribute="height" multiplier="221:29" constant="31.241379310344826" id="pdg-Xf-niN"/>
