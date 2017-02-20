@@ -47,7 +47,6 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         if !isSelected {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
-            indexPathOfSelectedCell = indexPath
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false

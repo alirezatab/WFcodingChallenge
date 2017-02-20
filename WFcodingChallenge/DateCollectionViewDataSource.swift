@@ -11,9 +11,10 @@ import UIKit
 class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     //MARK: - Global Private constants
-    private let dateFormatter = DateFormatter()
     private let dataSource = DateModel()
+    private let dateFormatter = DateFormatter()
     private let reuseIdentifier = "DateCollectionViewCell"
+    private var defaults = UserDefaults.standard
     
     //MARK: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,
@@ -35,9 +36,11 @@ class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         cell.weekdayLabel.text = dateFormatter.string(from: dates[indexPath.row])
         cell.dayOfMonthNumberLabel.text = String(indexPath.row + 1)
         
-        if !cell.isSelected {
-            cell.checkMarkImageView.alpha = 0
-        } else {
+        cell.checkMarkImageView.alpha = 0
+        
+        let savedIndexPathItem = defaults.bool(forKey: "\(indexPath.item)")
+        
+        if savedIndexPathItem == true {
             cell.checkMarkImageView.alpha = 0.75
         }
         

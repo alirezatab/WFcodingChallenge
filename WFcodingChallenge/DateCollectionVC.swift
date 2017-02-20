@@ -24,11 +24,12 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     
     //MARK: - Global Private constants & Vriables
     private let currentDate = NSDate()
+    private var defaults = UserDefaults.standard
     private let dataSource = DateCollectionViewDataSource()
-    private var dateFormatter = DateFormatter()
-    private var daysInMonth = Int()
-    private var isSelected = false
     private var weekday = String()
+    private var isSelected = false
+    private var daysInMonth = Int()
+    private var dateFormatter = DateFormatter()
     
     // MARK: - Golbal public delegate variable
     var dateSelectionDelegate : DateSelectionDelegate? = nil
@@ -89,9 +90,12 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         if !isSelected {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
+            // save the selected cell in user defaults cause it disappears when cells are reused
+            defaults.set(true, forKey: "\(indexPath.item)")
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
+            defaults.set(false, forKey: "\(indexPath.item)")
         }
         
         getFullWeekdayString(selectedCell)
@@ -113,6 +117,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         
         selectedCell.checkMarkImageView.alpha = 0
         isSelected = false
+        defaults.set(false, forKey: "\(indexPath.item)")
         
         if dateSelectionDelegate != nil {
             dateSelectionDelegate?.isDateSelected(isSelected,
