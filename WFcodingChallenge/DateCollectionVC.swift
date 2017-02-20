@@ -84,6 +84,8 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
+        print(indexPath.item)
+        
         let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
         
         // checks to see if same cell was tapped or not
@@ -114,19 +116,22 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didDeselectItemAt indexPath: IndexPath) {
         
-        let selectedCell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
+        print(indexPath.item)
         
-        selectedCell.checkMarkImageView.alpha = 0
+        if let selectedCell = collectionView.cellForItem(at: indexPath) as?DateCollectionViewCell {
+            
+            selectedCell.checkMarkImageView.alpha = 0
+            
+            if dateSelectionDelegate != nil {
+                dateSelectionDelegate?.isDateSelected(isSelected,
+                                                      weekday: selectedCell.weekdayLabel.text!,
+                                                      dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!,
+                                                      currentMonth: getMonth(),
+                                                      indexPath: indexPath)
+            }
+        }
         isSelected = false
         defaults.set(false, forKey: "Date - \(indexPath.item)")
-        
-        if dateSelectionDelegate != nil {
-            dateSelectionDelegate?.isDateSelected(isSelected,
-                                                  weekday: selectedCell.weekdayLabel.text!,
-                                                  dayOfMonthNumber: selectedCell.dayOfMonthNumberLabel.text!,
-                                                  currentMonth: getMonth(),
-                                                  indexPath: indexPath)
-        }
     }
     
     //MARK: - Memory Warning
