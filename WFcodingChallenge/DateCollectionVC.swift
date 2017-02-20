@@ -118,7 +118,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         
         print(indexPath.item)
         
-        if let selectedCell = collectionView.cellForItem(at: indexPath) as?DateCollectionViewCell {
+        if let selectedCell = collectionView.cellForItem(at: indexPath) as? DateCollectionViewCell {
             
             selectedCell.checkMarkImageView.alpha = 0
             

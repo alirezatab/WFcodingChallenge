@@ -49,11 +49,11 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
             // save the selected cell in user defaults cause it disappears when cells are reused
-            defaults.set(true, forKey: "Date - \(indexPath.item)")
+            defaults.set(true, forKey: "Time - \(indexPath.item)")
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
-            defaults.set(false, forKey: "Date - \(indexPath.item)")
+            defaults.set(false, forKey: "Time - \(indexPath.item)")
         }
         
         if timeSelectionDelegate != nil {
@@ -70,7 +70,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         
         selectedCell.checkMarkImageView.alpha = 0
         isSelected = false
-        defaults.set(false, forKey: "Date - \(indexPath.item)")
+        defaults.set(false, forKey: "Time - \(indexPath.item)")
         
         if timeSelectionDelegate != nil {
             timeSelectionDelegate?.isTimeSelected(isSelected,

@@ -38,9 +38,10 @@ class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         cell.checkMarkImageView.alpha = 0
         
-        let savedIndexPathItem = defaults.bool(forKey: "Date - \(indexPath.item)")
-        
-        if savedIndexPathItem == true {
+        let isSelectedIndexPathItem = defaults.bool(forKey: "Date - \(indexPath.item)")
+        print(indexPath.item)
+        print(isSelectedIndexPathItem)
+        if isSelectedIndexPathItem == true {
             cell.checkMarkImageView.alpha = 0.75
         }
         
