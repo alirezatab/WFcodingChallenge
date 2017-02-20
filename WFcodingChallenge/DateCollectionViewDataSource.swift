@@ -10,12 +10,12 @@ import UIKit
 
 class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    //Mark: - Global Private constants
+    //MARK: - Global Private constants
     private let dateFormatter = DateFormatter()
     private let dataSource = DateModel()
     private let reuseIdentifier = "DateCollectionViewCell"
     
-    //Mark: - Collection View Data Source
+    //MARK: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
@@ -34,7 +34,13 @@ class DateCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         // downcasting to string to be inserted in text
         cell.weekdayLabel.text = dateFormatter.string(from: dates[indexPath.row])
         cell.dayOfMonthNumberLabel.text = String(indexPath.row + 1)
-        cell.checkMarkImageView.alpha = 0
+        
+        if !cell.isSelected {
+            cell.checkMarkImageView.alpha = 0
+        } else {
+            cell.checkMarkImageView.alpha = 0.75
+        }
+        
         return cell
     }
 }

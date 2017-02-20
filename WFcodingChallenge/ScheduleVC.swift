@@ -168,7 +168,7 @@ extension ScheduleVC : UIPickerViewDelegate {
     }
 }
 
-// mark: - Picker View Custom Delegate
+//MARK: - Picker View Custom Delegate
 @available(iOS 10.0, *)
 extension ScheduleVC : PickerViewCustomDelegate {
     func showPickerView() {
@@ -176,7 +176,7 @@ extension ScheduleVC : PickerViewCustomDelegate {
     }
 }
 
-// mark: - Date Selection Custom Delegate
+//MARK: - Date Selection Custom Delegate
 @available(iOS 10.0, *)
 extension ScheduleVC : DateSelectionDelegate {
     func isDateSelected(_ isSelected: Bool,
@@ -193,7 +193,7 @@ extension ScheduleVC : DateSelectionDelegate {
     }
 }
 
-// mark: - Time Selection Custom Delegate
+//MARK: - Time Selection Custom Delegate
 @available(iOS 10.0, *)
 extension ScheduleVC : TimeSelectionDelegate {
     func isTimeSelected(_ isSelected: Bool,
@@ -201,6 +201,8 @@ extension ScheduleVC : TimeSelectionDelegate {
         
         self.isTimeSelected = isSelected
         self.selectedTime = selectedTime
+        
+        
         
         print(isTimeSelected)
         shouldEnableReservationButton()

@@ -15,7 +15,7 @@ class MyReservationVC: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //Mark: - Private Global Constats
+    //MARK: - Private Global Constats
     private let dataSource = MyReservationsDataSource()
 
     //MARK: - Life Cycle Methods

@@ -18,7 +18,7 @@ class MassageOptionVC: UITableViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var partySizeButton: UIButton!
     
-    // Mark: - Golbal public delegate variable
+    // MARK: - Golbal public delegate variable
     var pickerViewCustomDelegate : PickerViewCustomDelegate? = nil
     
     // MARK: - Life Cycle Methods
@@ -34,7 +34,7 @@ class MassageOptionVC: UITableViewController {
                                                object: nil)
     }
     
-    //Mark: - Custom Methods
+    //MARK: - Custom Methods
     // configure Button
     func configurePartySizeButton() {
         
@@ -50,7 +50,7 @@ class MassageOptionVC: UITableViewController {
         }
     }
     
-    //Mark: - IBActions
+    //MARK: - IBActions
     @IBAction func onPartySizeButtonPressed(_ sender: UIButton) {
         if pickerViewCustomDelegate != nil {
             pickerViewCustomDelegate?.showPickerView()

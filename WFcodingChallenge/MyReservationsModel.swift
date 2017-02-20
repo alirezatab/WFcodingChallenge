@@ -12,10 +12,10 @@ import CoreData
 @available(iOS 10.0, *)
 class MyReservationsModel: NSObject {
     
-    //Mark: - Global Private variable
+    //MARK: - Global Private variable
     private var searchResult : [MyReservations] = []
     
-    //Mark:- Core Data Fetch
+    //MARK:- Core Data Fetch
     // fetches data and puts it into arrau ot MyReservations
     func getReservationsData() -> [MyReservations] {
         let fetchRequest : NSFetchRequest<MyReservations> = MyReservations.fetchRequest()

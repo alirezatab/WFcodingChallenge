@@ -30,7 +30,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
     private var isSelected = false
     private var weekday = String()
     
-    // Mark: - Golbal public delegate variable
+    // MARK: - Golbal public delegate variable
     var dateSelectionDelegate : DateSelectionDelegate? = nil
     
     // MARK: - Life Cycle Methods
@@ -45,7 +45,7 @@ class DateCollectionVC: UIViewController, UICollectionViewDelegate {
         monthLabel.text = getMonth()
     }
     
-    //Mark: - Custom Methods
+    //MARK: - Custom Methods
     // based on current Date, just extract the Month
     func getMonth() -> String {
         dateFormatter.dateFormat = "MMMM"

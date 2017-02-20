@@ -10,10 +10,10 @@ import UIKit
 
 class PickerViewDataSource: NSObject, UIPickerViewDataSource {
 
-    //Mark: - Global Private constants
+    //MARK: - Global Private constants
     private let pickerDataSource = PickerModel()
     
-    //Mark: - Picker View Data Source
+    //MARK: - Picker View Data Source
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

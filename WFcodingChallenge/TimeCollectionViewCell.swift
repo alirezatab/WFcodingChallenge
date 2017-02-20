@@ -14,7 +14,7 @@ class TimeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
     
-    //Mark: - Custom Inilitiazers
+    //MARK: - Custom Inilitiazers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -25,7 +25,7 @@ class TimeCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
-    //Mark: - custom Method
+    //MARK: - custom Method
     // created border around the cell
     func setup() {
         self.layer.borderWidth = 0.75

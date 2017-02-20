@@ -15,13 +15,19 @@ protocol TimeSelectionDelegate {
 }
 
 class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
-
+    
+    //MARK: - IBOutlets
     @IBOutlet weak var timeCollectionView: UICollectionView!
+    
+    //MARK: - Global Private constants & Variables
     private let dataSource = TimeCollectionViewDataSource()
     private var isSelected = false
+    private var indexPathOfSelectedCell = IndexPath()
     
+    // Mark: - Golbal public delegate variable
     var timeSelectionDelegate : TimeSelectionDelegate? = nil
     
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +36,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         timeCollectionView.collectionViewLayout = TimeCustomFlowLayout()
     }
     
+    //MARK: - Collection View Delegate
     // user taps cell & check Mark appreas or disappears
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
@@ -40,6 +47,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         if !isSelected {
             selectedCell.checkMarkImageView.alpha = 0.75
             isSelected = true
+            indexPathOfSelectedCell = indexPath
         } else {
             selectedCell.checkMarkImageView.alpha = 0
             isSelected = false
@@ -66,6 +74,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         }
     }
 
+    // MARK: - Memory Warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

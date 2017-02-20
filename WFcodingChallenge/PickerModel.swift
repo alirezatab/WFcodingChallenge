@@ -13,14 +13,14 @@ class PickerModel: NSObject {
     //MARK: - Global Private variable
     private var pickerData : [String] = []
     
-    //Mark: - custom Initilizer
+    //MARK: - custom Initilizer
     override init() {
         super.init()
         
         setPickerData()
     }
     
-    //Mark: - setter & getter Functin for Data picker
+    //MARK: - setter & getter Functin for Data picker
     private func setPickerData() {
         for i in 1...12 {
             pickerData.append(String(i))

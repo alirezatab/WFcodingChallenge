@@ -20,7 +20,7 @@ class MyReservationViewCell: UICollectionViewCell {
     @IBOutlet weak var rescheduleButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    //Mark: - Custom Inilitiazers
+    //MARK: - Custom Inilitiazers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -31,7 +31,7 @@ class MyReservationViewCell: UICollectionViewCell {
         setup()
     }
     
-    //Mark: - override cell size
+    //MARK: - override cell size
     // create a cell based on customized width and height    
     func setup() {
         self.layer.borderWidth = 0.75

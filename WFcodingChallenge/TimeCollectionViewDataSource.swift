@@ -16,7 +16,7 @@ class TimeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     private let dateFormatter = DateFormatter()
     private let reuseIdentifier = "TimeCollectionViewCell"
 
-    //Mark: - Collection View Data Source
+    //MARK: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
@@ -38,7 +38,12 @@ class TimeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         let times = dataSource.getReservationTimeIntervals()
         
         cell.timeLabel.text = dateFormatter.string(from: times[indexPath.row])
-        cell.checkMarkImageView.alpha = 0
+        
+        if !cell.isSelected {
+            cell.checkMarkImageView.alpha = 0
+        } else {
+            cell.checkMarkImageView.alpha = 0.75
+        }
         
         return cell
     }

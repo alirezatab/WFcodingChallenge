@@ -11,11 +11,11 @@ import UIKit
 @available(iOS 10.0, *)
 class MyReservationsDataSource: NSObject, UICollectionViewDataSource {
     
-    //Mark: - Global Private constants
+    //MARK: - Global Private constants
     private let reuseIdentifier = "MyReservationVC"
     private let myReservationsDataSource = MyReservationsModel()
     
-    //Mark: - Collection View Data Source
+    //MARK: - Collection View Data Source
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
@@ -36,7 +36,7 @@ class MyReservationsDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
     
-    //Mark: - Custom functions
+    //MARK: - Custom functions
     func populateCellsWithData(_ cell: MyReservationViewCell, indexPath: IndexPath) {
         
         let searchResults = myReservationsDataSource.getReservationsData()

@@ -15,7 +15,7 @@ class DateCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dayOfMonthNumberLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
 
-    //Mark: - custom Initilizers
+    //MARK: - custom Initilizers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -26,7 +26,7 @@ class DateCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
-    //Mark: - custom Method
+    //MARK: - custom Method
     // created border around the cell
     func setup() {
         self.layer.borderWidth = 0.75

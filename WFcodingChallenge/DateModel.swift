@@ -10,7 +10,7 @@ import UIKit
 
 class DateModel: NSObject {
     
-    //Mark: - Private Global Constants & Variables
+    //MARK: - Private Global Constants & Variables
     private let currentDate = NSDate()
     private let calendar = NSCalendar.current
     private let lengthOfMonth : TimeInterval = 0
@@ -18,7 +18,7 @@ class DateModel: NSObject {
     private let componentsLast = NSDateComponents()
     private let dateFormatter = DateFormatter()
 
-    //Mark: - Private Custom methods
+    //MMARK: - Private Custom methods
     private func getStartOfMonth() -> Date {
         
         // get month and year date component fromt current date
@@ -46,7 +46,7 @@ class DateModel: NSObject {
         return endOfMonth
     }
     
-    //Mark: - Public Custom methods
+    //MMARK: - Public Custom methods
     // puts all the days of month and return it as array of Dates
     func getAllDaysOfMonth() -> [Date] {
 
