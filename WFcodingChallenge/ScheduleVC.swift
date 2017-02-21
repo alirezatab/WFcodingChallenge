@@ -21,21 +21,23 @@ class ScheduleVC: UIViewController {
     //MARK: - Global fileprivate constants & Variables
     fileprivate let pickerData = PickerModel().getPickerData()
     fileprivate var partySizeString = String()
-    fileprivate var isDateSelected = Bool()
-    fileprivate var isTimeSelected = Bool()
     fileprivate var selectedTime = String()
     fileprivate var selectedWeekday = String()
     fileprivate var selectedDayOfMonthNumber = String()
     fileprivate var currentMonth = String()
-    fileprivate var selectedIndexPath = IndexPath()
+    fileprivate var selectedDateIndexPath = IndexPath()
+    fileprivate var selectedTimeIndexPath = IndexPath()
+    fileprivate let presistTimeSelected = "timeSelected"
+    fileprivate let presistDateSelected = "dateSelected"
+    fileprivate var defaults = UserDefaults.standard
     
     //MARK: - Global Private constants & Variables
     private let pickerDataSoure = PickerViewDataSource()
     private let massageOptionVCidentifier = "MassageOptionVC"
     private let dateCollectionVCidentifier = "DateCollectionVC"
     private let timeCollectionVCidentifier = "TimeCollectionVC"
+    
     private var dateFormatter = DateFormatter()
-    private var defaults = UserDefaults.standard
     private var myReservationsClassName = String()
     
     // MARK: - Life Cycle Methods
@@ -55,6 +57,8 @@ class ScheduleVC: UIViewController {
         pickerHelperView.isHidden = true
         
         reservationButton.isEnabled = false
+        
+        shouldEnableReservationButton()
     }
     
     // MARK: - Custom Configuration Method
@@ -67,6 +71,11 @@ class ScheduleVC: UIViewController {
     func shouldEnableReservationButton() {
         //print(isTimeSelected)
         //print(isDateSelected)
+        
+        // for presistant data, dave the state of enabled button and use it to bypass if statement
+        let isTimeSelected = defaults.bool(forKey: presistTimeSelected)
+        let isDateSelected = defaults.bool(forKey: presistDateSelected)
+        
         if isTimeSelected && isDateSelected {
             reservationButton.isEnabled = true
             reservationButton.backgroundColor = UIColor(colorLiteralRed: 2/255.0,
@@ -102,8 +111,10 @@ class ScheduleVC: UIViewController {
         
         CoreDataStack.saveContext()
         // when user pushes the reserved button, reset the userdefault for Date and Time selection
-        defaults.set(false, forKey: "Date - \(self.selectedIndexPath.item)")
-        defaults.set(false, forKey: "Time - \(self.selectedIndexPath.item)")
+        defaults.set(false, forKey: "Date - \(self.selectedDateIndexPath.item)")
+        defaults.set(false, forKey: "Time - \(self.selectedTimeIndexPath.item)")
+        defaults.set(false, forKey: presistTimeSelected)
+        defaults.set(false, forKey: presistDateSelected)
     }
     
     // MARK: - IBActions
@@ -190,11 +201,16 @@ extension ScheduleVC : DateSelectionDelegate {
                         currentMonth: String,
                         indexPath: IndexPath) {
         
-        self.isDateSelected = isSelected
         self.selectedWeekday = weekday;
         self.selectedDayOfMonthNumber = dayOfMonthNumber
         self.currentMonth = currentMonth
-        self.selectedIndexPath = indexPath
+        self.selectedDateIndexPath = indexPath
+        
+        defaults.set(false, forKey: presistDateSelected)
+        
+        if isSelected {
+            defaults.set(true, forKey: presistDateSelected)
+        }
         
         shouldEnableReservationButton()
     }
@@ -204,12 +220,17 @@ extension ScheduleVC : DateSelectionDelegate {
 @available(iOS 10.0, *)
 extension ScheduleVC : TimeSelectionDelegate {
     func isTimeSelected(_ isSelected: Bool,
-                        selectedTime: String) {
+                        selectedTime: String,
+                        indexPath: IndexPath) {
         
-        self.isTimeSelected = isSelected
         self.selectedTime = selectedTime
+        self.selectedTimeIndexPath = indexPath
+        defaults.set(false, forKey: presistTimeSelected)
         
-        print(isTimeSelected)
+        if isSelected {
+            defaults.set(true, forKey: presistTimeSelected)
+        }
+        
         shouldEnableReservationButton()
     }
 }

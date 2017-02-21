@@ -11,7 +11,8 @@ import UIKit
 // set custom delegate for time selection
 protocol TimeSelectionDelegate {
     func isTimeSelected(_ isSelected: Bool,
-                        selectedTime: String)
+                        selectedTime: String,
+                        indexPath: IndexPath)
 }
 
 class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
@@ -44,6 +45,7 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         
         let selectedCell = collectionView.cellForItem(at: indexPath) as! TimeCollectionViewCell
         
+
         // checks to see if same cell was tapped again
         if !isSelected {
             selectedCell.checkMarkImageView.alpha = 0.75
@@ -58,7 +60,8 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         
         if timeSelectionDelegate != nil {
             timeSelectionDelegate?.isTimeSelected(isSelected,
-                                                  selectedTime: selectedCell.timeLabel.text!)
+                                                  selectedTime: selectedCell.timeLabel.text!,
+                                                  indexPath: indexPath)
         }
     }
     
@@ -74,7 +77,8 @@ class TimeCollectionVC: UIViewController, UICollectionViewDelegate {
         
         if timeSelectionDelegate != nil {
             timeSelectionDelegate?.isTimeSelected(isSelected,
-                                                  selectedTime: selectedCell.timeLabel.text!)
+                                                  selectedTime: selectedCell.timeLabel.text!,
+                                                  indexPath: indexPath)
         }
     }
 
