@@ -23,16 +23,16 @@
 		C255D6AE1E59079300455B47 /* MyReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6AD1E59079300455B47 /* MyReservationVC.swift */; };
 		C255D6B21E59102F00455B47 /* MyReservationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B11E59102F00455B47 /* MyReservationViewCell.swift */; };
 		C255D6B41E591B3A00455B47 /* MyReservationCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B31E591B3A00455B47 /* MyReservationCustomFlowLayout.swift */; };
-		C255D6BA1E59659200455B47 /* WFCodingChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */; };
 		C255D6F01E596D6700455B47 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255D6EF1E596D6700455B47 /* CoreDataStack.swift */; };
+		C2C1B6D41E5E150900997526 /* WFCodingChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2C1B6D21E5E150900997526 /* WFCodingChallenge.xcdatamodeld */; };
+		C2C1B6D71E5E153400997526 /* MyReservations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C1B6D51E5E153400997526 /* MyReservations+CoreDataClass.swift */; };
+		C2C1B6D81E5E153400997526 /* MyReservations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C1B6D61E5E153400997526 /* MyReservations+CoreDataProperties.swift */; };
 		C2CCE57A1E55A0F20045BBC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */; };
 		C2CCE57F1E55A0F20045BBC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE57D1E55A0F20045BBC1 /* Main.storyboard */; };
 		C2CCE5811E55A0F20045BBC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */; };
 		C2CCE5841E55A0F20045BBC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CCE5821E55A0F20045BBC1 /* LaunchScreen.storyboard */; };
 		C2CCE58C1E55A49B0045BBC1 /* SpaServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */; };
 		C2CCE58E1E55DE820045BBC1 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */; };
-		C2D708D81E599B2300AAEEAA /* MyReservations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D708D61E599B2300AAEEAA /* MyReservations+CoreDataClass.swift */; };
-		C2D708D91E599B2300AAEEAA /* MyReservations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D708D71E599B2300AAEEAA /* MyReservations+CoreDataProperties.swift */; };
 		C2D708DD1E59A50E00AAEEAA /* MyReservationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D708DC1E59A50E00AAEEAA /* MyReservationsModel.swift */; };
 		C2D708DF1E59A5EB00AAEEAA /* MyReservationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D708DE1E59A5EB00AAEEAA /* MyReservationsDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -54,8 +54,10 @@
 		C255D6AD1E59079300455B47 /* MyReservationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationVC.swift; sourceTree = "<group>"; };
 		C255D6B11E59102F00455B47 /* MyReservationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationViewCell.swift; sourceTree = "<group>"; };
 		C255D6B31E591B3A00455B47 /* MyReservationCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationCustomFlowLayout.swift; sourceTree = "<group>"; };
-		C255D6B91E59659200455B47 /* WFCodingChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WFCodingChallenge.xcdatamodel; sourceTree = "<group>"; };
 		C255D6EF1E596D6700455B47 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C2C1B6D31E5E150900997526 /* WFCodingChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WFCodingChallenge.xcdatamodel; sourceTree = "<group>"; };
+		C2C1B6D51E5E153400997526 /* MyReservations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyReservations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C2C1B6D61E5E153400997526 /* MyReservations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyReservations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C2CCE5761E55A0F20045BBC1 /* WFcodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WFcodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2CCE57E1E55A0F20045BBC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		C2CCE5851E55A0F20045BBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2CCE58B1E55A49B0045BBC1 /* SpaServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaServiceVC.swift; sourceTree = "<group>"; };
 		C2CCE58D1E55DE820045BBC1 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
-		C2D708D61E599B2300AAEEAA /* MyReservations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MyReservations+CoreDataClass.swift"; path = "../MyReservations+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C2D708D71E599B2300AAEEAA /* MyReservations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MyReservations+CoreDataProperties.swift"; path = "../MyReservations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C2D708DC1E59A50E00AAEEAA /* MyReservationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationsModel.swift; sourceTree = "<group>"; };
 		C2D708DE1E59A5EB00AAEEAA /* MyReservationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReservationsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,8 +84,8 @@
 		C255D6C21E59674D00455B47 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				C2D708D61E599B2300AAEEAA /* MyReservations+CoreDataClass.swift */,
-				C2D708D71E599B2300AAEEAA /* MyReservations+CoreDataProperties.swift */,
+				C2C1B6D51E5E153400997526 /* MyReservations+CoreDataClass.swift */,
+				C2C1B6D61E5E153400997526 /* MyReservations+CoreDataProperties.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 				C2CCE5791E55A0F20045BBC1 /* AppDelegate.swift */,
 				C2CCE5801E55A0F20045BBC1 /* Assets.xcassets */,
 				C2CCE5851E55A0F20045BBC1 /* Info.plist */,
-				C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */,
+				C2C1B6D21E5E150900997526 /* WFCodingChallenge.xcdatamodeld */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -264,20 +264,20 @@
 				C255D6A51E576A0200455B47 /* TimeCustomFlowLayout.swift in Sources */,
 				C255D6B41E591B3A00455B47 /* MyReservationCustomFlowLayout.swift in Sources */,
 				C255D69D1E56CE9100455B47 /* TimeModel.swift in Sources */,
-				C2D708D81E599B2300AAEEAA /* MyReservations+CoreDataClass.swift in Sources */,
 				C255D6AA1E578CE500455B47 /* PickerViewDataSource.swift in Sources */,
 				C255D6991E56BB6B00455B47 /* DateModel.swift in Sources */,
+				C2C1B6D71E5E153400997526 /* MyReservations+CoreDataClass.swift in Sources */,
 				C255D6A71E5775CE00455B47 /* DateCustomFlowLayout.swift in Sources */,
 				C255D69B1E56BFA000455B47 /* DateCollectionViewDataSource.swift in Sources */,
 				C255D6F01E596D6700455B47 /* CoreDataStack.swift in Sources */,
 				C2D708DF1E59A5EB00AAEEAA /* MyReservationsDataSource.swift in Sources */,
 				C255D6931E568C3300455B47 /* DateCollectionVC.swift in Sources */,
-				C2D708D91E599B2300AAEEAA /* MyReservations+CoreDataProperties.swift in Sources */,
+				C2C1B6D41E5E150900997526 /* WFCodingChallenge.xcdatamodeld in Sources */,
+				C2C1B6D81E5E153400997526 /* MyReservations+CoreDataProperties.swift in Sources */,
 				C2D708DD1E59A50E00AAEEAA /* MyReservationsModel.swift in Sources */,
 				C255D6951E568C4800455B47 /* TimeCollectionVC.swift in Sources */,
 				C255D6B21E59102F00455B47 /* MyReservationViewCell.swift in Sources */,
 				C255D6871E5674DD00455B47 /* DateCollectionViewCell.swift in Sources */,
-				C255D6BA1E59659200455B47 /* WFCodingChallenge.xcdatamodeld in Sources */,
 				C255D6AC1E578EB200455B47 /* PickerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,14 +445,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C255D6B81E59659200455B47 /* WFCodingChallenge.xcdatamodeld */ = {
+		C2C1B6D21E5E150900997526 /* WFCodingChallenge.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C255D6B91E59659200455B47 /* WFCodingChallenge.xcdatamodel */,
+				C2C1B6D31E5E150900997526 /* WFCodingChallenge.xcdatamodel */,
 			);
-			currentVersion = C255D6B91E59659200455B47 /* WFCodingChallenge.xcdatamodel */;
-			name = WFCodingChallenge.xcdatamodeld;
-			path = ../WFCodingChallenge.xcdatamodeld;
+			currentVersion = C2C1B6D31E5E150900997526 /* WFCodingChallenge.xcdatamodel */;
+			path = WFCodingChallenge.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
